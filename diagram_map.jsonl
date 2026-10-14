@@ -1,0 +1,1371 @@
+{
+    "id": 1,
+    "class": "Timeline",
+    "number": 10,
+    "filepath": "",
+    "dimension_weight": {
+        "Structure": 0.45,
+        "Aesthetics": 0.15,
+        "Content": 0.4
+    },
+    "criteria": {
+        "Structure": {
+            "Visual Organizational Layout": [
+                {
+                    "criterion_name": "Axis Continuity and Directional Flow",
+                    "explanation": "Evaluates the prominence and continuity of the temporal axis as the diagram's structural backbone. The axis must establish a clear, uninterrupted reading path (e.g., strictly left-to-right, top-to-bottom, or a clearly guided serpentine/winding path) with distinct starting and ending points, ensuring the chronological progression is immediately intuitive.",
+                    "human_preference_injection": "Superior diagrams establish a formal, continuous temporal axis as their primary structural backbone, rather than relying solely on network-like directional arrows to imply sequence. This explicit structural anchoring creates an uninterrupted reading path, ensuring the chronological progression is immediately intuitive without requiring the reader to trace complex node-to-node connections.",
+                    "weight": 0.15
+                },
+                {
+                    "criterion_name": "Node-to-Axis Referential Clarity",
+                    "explanation": "Assesses the visual connection between informational nodes (events, milestones) and their corresponding chronological markers on the axis. Connecting lines, pointers, or spatial proximity must be unambiguous, avoiding crossed lines, excessive spatial detachment, or ambiguous routing that could confuse which event belongs to which specific point in time.",
+                    "human_preference_injection": "Superior referential clarity is achieved through explicit, continuous vertical guides that physically anchor nodes to their corresponding axis markers across the entire diagram height. This eliminates the cognitive load of mental projection and ensures unambiguous temporal alignment for nodes positioned far from the primary axis.",
+                    "weight": 0.2
+                },
+                {
+                    "criterion_name": "Spatial Distribution and Density Management",
+                    "explanation": "Measures the effectiveness of the layout in handling varying densities of information. The structure should employ strategic spatial distribution—such as alternating node placement (e.g., top and bottom of a horizontal axis), staggered heights, or logical clustering—to prevent overcrowding, visual occlusion, and structural imbalance during periods of high event frequency.",
+                    "human_preference_injection": "Effective density management utilizes systematic vertical stacking and categorical partitioning to maintain legibility during high-frequency data periods, preventing label occlusion and structural imbalance without sacrificing information completeness. A superior layout ensures that even as data volume increases, strategic spatial distribution preserves a clear, uncrowded relationship between nodes and their temporal markers.",
+                    "weight": 0.15
+                }
+            ],
+            "Logical Accuracy": [
+                {
+                    "criterion_name": "Strict Chronological Sequencing",
+                    "explanation": "Evaluates the absolute adherence to temporal order. All nodes and chronological markers must be placed in the correct historical or developmental sequence. Any structural hallucination that results in temporal inversions, backward jumps (unless explicitly representing a logical feedback loop), or out-of-order placement fundamentally violates the timeline's logical accuracy.",
+                    "human_preference_injection": "Superior adherence to strict chronological sequencing requires explicitly embedding specific temporal markers (e.g., dates or years) within the nodes or structure to make the absolute temporal order immediately verifiable. Relying solely on directional connectors without explicit dates compromises the timeline's logical rigor by forcing readers to depend on external knowledge to confirm the sequence.",
+                    "weight": 0.25
+                },
+                {
+                    "criterion_name": "Temporal Scale and Structural Integrity",
+                    "explanation": "Assesses how the spatial distances between nodes reflect the actual intervals of time. While a strict mathematical scale is not always mandatory, the structural representation must not mislead the reader. Significant temporal gaps should be logically managed (e.g., using standardized axis breaks or visual compressions) rather than presenting vastly different time intervals with identical spatial spacing without structural rationale.",
+                    "human_preference_injection": "Superior temporal scale integrity is achieved by dynamically adapting the axis's spatial proportions to logically accommodate varying event frequencies, explicitly expanding or compressing the timeline as needed. It strictly avoids misleading the reader by ensuring that unequal time intervals are never falsely presented with identical spatial spacing without a clear structural rationale.",
+                    "weight": 0.15
+                },
+                {
+                    "criterion_name": "Categorical and Hierarchical Mapping",
+                    "explanation": "Evaluates the logical grouping of events when the timeline depicts multiple parallel tracks (e.g., different scientific disciplines evolving simultaneously) or nested hierarchies (e.g., specific events occurring within a broader defined 'Era'). The structure must accurately partition these categories into distinct swimlanes, tiers, or bounding boxes, ensuring parallel or parent-child temporal relationships are faithfully reconstructed.",
+                    "human_preference_injection": "Superior diagrams effectively represent both parallel categorical tracks and nested hierarchical relationships by using formal structural partitions to distinguish between broad groupings and their underlying foundational or parent-child dependencies.",
+                    "weight": 0.1
+                }
+            ]
+        },
+        "Content": {
+            "Visual Element Representation": [
+                {
+                    "criterion_name": "Iconographic and Typographic Fidelity",
+                    "explanation": "Evaluates the micro-rendering quality of the specific visual elements used to denote milestones, such as institutional logos, scientific icons, and text labels. These elements must be rendered with sharp, high-resolution edges, completely free from AI-generated morphological distortions, blurring, or typographical garbling, ensuring that each discrete event node is visually distinct and professional.",
+                    "human_preference_injection": "Superior iconographic fidelity is demonstrated through the inclusion of relevant institutional logos and the use of polished, high-resolution graphical nodes rather than basic, unrefined shapes. This deliberate micro-rendering elevates the professional quality and contextual authenticity of the discrete visual elements.",
+                    "weight": 0.15
+                },
+                {
+                    "criterion_name": "Semantic Clarity and Legend Provision",
+                    "explanation": "Assesses whether the graphical motifs (e.g., specific shapes or colors) used to represent different categories of events intuitively convey their intended scientific or historical meaning. If abstract symbols, abbreviations, or color-coded classifications are employed to differentiate milestone types, clear and appropriately positioned explanatory legends must be provided to ensure the content is self-explanatory.",
+                    "human_preference_injection": "Direct textual labeling of relational transitions provides superior intuitive clarity over abstract legends by making the scientific meaning of connections immediately explicit. Semantic clarity is significantly compromised when a diagram employs unexplained visual encodings, such as color-coded categories, without providing a corresponding legend to define their specific meaning.",
+                    "weight": 0.15
+                },
+                {
+                    "criterion_name": "Temporal Marker Legibility",
+                    "explanation": "Focuses specifically on the visual articulation of the chronological data points (e.g., years, months, or specific dates). The alphanumeric characters representing time must be crisp, appropriately scaled, and entirely legible, avoiding any visual occlusion or overlapping that would obscure the exact temporal value of the milestone.",
+                    "human_preference_injection": "Superior legibility is achieved by employing granular sub-period markers during high-density intervals to prevent chronological ambiguity and visual crowding. This ensures that the specific temporal value of every milestone remains distinct and unoccluded, even when multiple events are clustered within a single primary time unit.",
+                    "weight": 0.1
+                }
+            ],
+            "Content Accuracy": [
+                {
+                    "criterion_name": "Chronological and Factual Precision",
+                    "explanation": "The most critical accuracy metric for a timeline. Evaluates whether the specific events, milestones, or developmental stages are factually correct and accurately paired with their corresponding temporal markers. It strictly penalizes chronological hallucinations, where an event is erroneously attributed to the wrong year or date, or where the factual assertions contradict the established parameters of the source paper.",
+                    "human_preference_injection": "Superior precision is achieved by utilizing granular temporal markers that accurately pair milestones with specific, verifiable dates, prioritizing exact chronological alignment over generalized period-based descriptions. This ensures the timeline maintains high factual rigor and faithfully represents the specific pace of development throughout the entire research narrative.",
+                    "weight": 0.25
+                },
+                {
+                    "criterion_name": "Milestone Completeness and Relevance",
+                    "explanation": "Assesses the depth and informational richness of the extracted content. The timeline must comprehensively capture the critical transitional steps, core milestones, and high-value details articulated in the paper's narrative. Conversely, it must avoid informational noise by excluding trivial, irrelevant events or unrestrained accumulations of secondary details that dilute the core developmental trajectory.",
+                    "human_preference_injection": "Superiority is defined by the inclusion of specific, granular milestones that represent the actual technical or historical evolution of the field, rather than a high-level summary of a paper's internal conceptual framework. A better diagram prioritizes informational density and distinct developmental steps over abstract categorical mapping to ensure a comprehensive representation of the chronological trajectory.",
+                    "weight": 0.2
+                },
+                {
+                    "criterion_name": "Terminological Accuracy and Consistency",
+                    "explanation": "Evaluates the precise use of scientific nomenclature, technical terminology, and abbreviations within the milestone text labels. The language used in the diagram must be strictly consistent with the textual discourse of the paper, devoid of ambiguous phrasing, erroneous mathematical/chemical symbols, or undefined non-standard abbreviations.",
+                    "human_preference_injection": "Superior terminological accuracy is demonstrated by employing the precise, granular technical nomenclature and specialized sub-classifications explicitly detailed in the source text, rather than defaulting to broad, generic terminology. This rigorous use of specific scientific vocabulary ensures the diagram faithfully reflects the nuanced technical discourse of the research.",
+                    "weight": 0.15
+                }
+            ]
+        },
+        "Aesthetics": [
+            {
+                "criterion_name": "Typographic Styling and Hierarchy",
+                "explanation": "Evaluates the aesthetic treatment of text within the timeline. High-quality timelines use distinct typographic styling (e.g., variations in font size, weight, and color) to visually differentiate chronological markers (dates/years), event titles, and descriptive text. The chosen fonts must be highly legible, professionally scaled, and contribute to a clear visual hierarchy without causing eye strain.",
+                "human_preference_injection": "Superior typographic hierarchy is achieved through the deliberate use of varied font weights, sizes, and color contrasts to explicitly differentiate between temporal markers, categorical headers, and specific data points. A uniform or \"flat\" typographic approach is less effective because it fails to provide the visual cues necessary for the reader to intuitively navigate different levels of informational depth.",
+                "weight": 0.35
+            },
+            {
+                "criterion_name": "Color Harmony and Functional Encoding",
+                "explanation": "Assesses the selection and application of color palettes. Colors should be visually harmonious, avoiding clashing or overly fluorescent tones. In timelines, color should be applied deliberately to enhance the aesthetic rhythm, visually group distinct eras or event categories, and ensure high contrast between the text/nodes and the background, adhering to professional scientific publishing standards.",
+                "human_preference_injection": "Scientific diagrams are enhanced by a restrained, professional palette that prioritizes functional categorical encoding and high contrast for legibility over purely decorative gradients or \"artistic\" infographic-style color transitions. This approach ensures that color serves as a deliberate tool for logical grouping and structural clarity, adhering to rigorous academic publishing standards.",
+                "weight": 0.3
+            },
+            {
+                "criterion_name": "Stylistic Consistency of Graphical Elements",
+                "explanation": "Measures the uniformity of the visual language across all graphical components. The temporal axis line, tick marks, node indicators (e.g., dots, pins), and any accompanying icons or logos must share consistent graphical properties, such as uniform stroke weights, matching corner radii, and a cohesive dimensional style (e.g., strictly flat 2D or uniformly rendered 3D), avoiding any discordant patchwork effects.",
+                "human_preference_injection": "Stylistic consistency is achieved by using uniform structural containers and connector properties to unify diverse informational elements, rather than forcing internal content into a singular shape. A diagram is superior when it avoids singular, non-functional decorative effects that disrupt the established visual grammar and academic tone of the overall composition.",
+                "weight": 0.2
+            },
+            {
+                "criterion_name": "Visual Polish and Noise Reduction",
+                "explanation": "Evaluates the overall refinement of the diagram's presentation layer. A strong timeline avoids superficial, non-functional decorative elements such as heavy drop shadows, exaggerated gradients, or complex background textures that distract from the chronological narrative. Line weights for the axis and connectors should be crisp and proportionate, resulting in a clean, academically rigorous visual polish.",
+                "human_preference_injection": "Superior visual polish is achieved by prioritizing crisp, functional structural elements over superficial decorative embellishments like gradients or glows that lack academic utility. Refinement is defined by the elimination of non-functional aesthetic noise, ensuring that visual \"cleanliness\" serves the data rather than merely simplifying the layout.",
+                "weight": 0.15
+            }
+        ]
+    }
+}
+{
+    "id": 2,
+    "class": "Lineage Dendrogram",
+    "number": 10,
+    "filepath": "",
+    "dimension_weight": {
+        "Structure": 0.46,
+        "Aesthetics": 0.15,
+        "Content": 0.39
+    },
+    "criteria": {
+        "Content": {
+            "Visual Element Representation": [
+                {
+                    "criterion_name": "Typographic Legibility of Terminal and Internal Labels",
+                    "explanation": "Evaluates the clarity and crispness of the text used for leaf nodes (e.g., species, sequences, models) and internal node annotations (e.g., bootstrap values, divergence times). Given the high information density typical of dendrograms, text must be rendered in high resolution, free from typographical overlapping, blurring, or AI-generated garbling, ensuring every taxon and metric is easily readable.",
+                    "human_preference_injection": "Since maintaining clear typography under high information density is inherently more challenging, charts that successfully integrate rich metadata (e.g., color-coding and supplementary annotations) without sacrificing legibility should be awarded higher scores.",
+                    "weight": 0.15
+                },
+                {
+                    "criterion_name": "High-Fidelity Rendering of Branches and Graphical Motifs",
+                    "explanation": "Assesses the visual sharpness and precision of the branching lines (edges) and any accompanying graphical motifs (e.g., silhouettes of organisms, molecular structures). Bifurcation points must be sharply defined without generative 'melting' or artifactual blurring. If icons are used to represent clades or species, they must be distinct, recognizable, and free from morphological distortion.",
+                    "human_preference_injection": "High-fidelity rendering requires that all branching lines and graphical motifs be deliberately precise, distinct, and morphologically consistent. A diagram that maintains clean, artifact-free execution is strictly preferred over one that introduces unexplained, blurry, or distorted generative noise, regardless of its apparent visual complexity.",
+                    "weight": 0.15
+                },
+                {
+                    "criterion_name": "Adequacy of Scale Bars and Explanatory Legends",
+                    "explanation": "Measures the presence, clarity, and appropriate positioning of essential explanatory elements. For dendrograms where branch length indicates quantitative metrics (time or genetic distance), a clear, legible scale bar is mandatory. Additionally, comprehensive legends must be provided for any color-coding, shading, or symbols used to denote specific clades, traits, or environmental factors.",
+                    "human_preference_injection": "A diagram that incorporates rich explanatory elements—such as symbols or inline annotations to denote specific traits—is preferred over an overly simplistic diagram that omits these dimensions entirely. Evaluators should not reward a lack of detail merely because it circumvents the need for a formal legend.",
+                    "weight": 0.15
+                }
+            ],
+            "Content Accuracy": [
+                {
+                    "criterion_name": "Nomenclatural and Terminological Precision",
+                    "explanation": "Evaluates the factual correctness and formatting of the labels used within the dendrogram. Taxa names, model designations, or sequence identifiers must be spelled correctly and strictly match the manuscript's text. Furthermore, it checks for adherence to scientific conventions, such as the correct use of italics for biological binomial nomenclature or standardized abbreviations.",
+                    "human_preference_injection": "Nomenclatural precision prioritizes the inclusion of specific, detailed scientific terminology (e.g., exact model names and identifiers) over the flawless formatting of merely broad, high-level categories. A diagram that utilizes the precise specific nomenclature is strongly preferred, even if those detailed labels suffer from minor typographical artifacts like awkward word wrapping.",
+                    "weight": 0.2
+                },
+                {
+                    "criterion_name": "Quantitative Fidelity of Evolutionary Metrics",
+                    "explanation": "Assesses the accuracy of the numerical data embedded in the diagram. This includes ensuring that branch lengths accurately correspond to the stated genetic distances or temporal divergence scales, and that statistical support values (e.g., bootstrap values, posterior probabilities) are factually correct, logically placed at the correct nodes, and not hallucinated or arbitrarily assigned.",
+                    "human_preference_injection": "A superior diagram explicitly embeds the precise numerical data and quantitative metrics detailed in the source text, rather than relying solely on qualitative structural relationships. Integrating explicit factual values—such as exact counts, measurable scales, or specific sequence metrics—ensures higher quantitative fidelity and a more rigorous scientific representation.",
+                    "weight": 0.2
+                },
+                {
+                    "criterion_name": "Comprehensive Extraction of Lineage Details",
+                    "explanation": "Measures the diagram's completeness in reflecting the core evolutionary narrative of the paper. It evaluates whether critical details explicitly mentioned in the text—such as specific outgroups used for rooting, key evolutionary events (e.g., gene duplications, horizontal gene transfers), or significant ancestral nodes—have been successfully extracted and accurately populated into the diagram without being omitted or drowned in irrelevant noise.",
+                    "human_preference_injection": "A superior diagram comprehensively extracts all core dimensions of the evolutionary narrative dictated by the source text, integrating both the structural lineage progression and its associated functional or classificatory metadata.",
+                    "weight": 0.15
+                }
+            ]
+        },
+        "Aesthetics": [
+            {
+                "criterion_name": "Branch and Edge Articulation",
+                "explanation": "Evaluates the stylistic rendering of the dendrogram's branching lines. High-quality execution requires consistent stroke weights, unified line styles (e.g., solid, dashed), and crisp geometric rendering. Whether the tree utilizes orthogonal corners, straight angled lines, or smooth radial curves, the line work must be visually clean, free of jagged edges, pixelation, or discordant stylistic mixing.",
+                "human_preference_injection": "The evaluation must remain strictly neutral regarding the choice of geometric style—whether orthogonal, curved, or an intentional combination of both—as long as the execution is deliberate and visually clean. High-quality articulation is defined solely by consistent stroke weights, crisp rendering, and the absence of artifacts like jagged edges, rather than a subjective preference for a specific routing aesthetic.",
+                "weight": 0.3
+            },
+            {
+                "criterion_name": "Color Harmony and Clade Differentiation",
+                "explanation": "Assesses the selection and application of color palettes used to distinguish different lineages, clades, or evolutionary periods. The colors should be visually harmonious, professional, and accessible (e.g., colorblind-friendly), providing clear visual differentiation without resorting to garish, highly saturated, or clashing neon hues. The color logic should enhance the visual appeal while maintaining academic seriousness.",
+                "human_preference_injection": "A superior diagram employs natural, harmonious color palettes that maintain academic seriousness, avoiding the use of highly saturated, basic primary colors that can appear unrefined or garish. Strategically restricting color to specific illustrative elements while keeping the structural framework neutral enhances visual appeal without compromising professional aesthetics.",
+                "weight": 0.3
+            },
+            {
+                "criterion_name": "Typographic Aesthetics and Leaf Labeling",
+                "explanation": "Focuses on the graphic design quality of the text used for root, node, and leaf labels. Typography must be highly legible, utilizing clean, professional fonts with appropriate scaling and font weights. The text styling must harmonize with the graphical elements of the tree, ensuring that even in dense areas with numerous terminal taxa, the labels look aesthetically balanced and do not cause visual strain.",
+                "human_preference_injection": "Superior typography elegantly structures dense, multi-layered information using clean fonts, distinct hierarchical weighting, and refined, well-proportioned bounding boxes. It explicitly favors visually unified, harmonious designs over clunky, oversized containers or overly simplistic, rudimentary layouts.",
+                "weight": 0.25
+            },
+            {
+                "criterion_name": "Visual Polish and Minimalist Execution",
+                "explanation": "Measures the overall graphic refinement and adherence to a clean, scientific design aesthetic. The diagram should be free of 'chartjunk'—such as unnecessary 3D bevels, heavy drop shadows, distracting background gradients, or superfluous decorative motifs. A high score indicates a polished, minimalist presentation that maximizes the data-to-ink ratio and presents the evolutionary history with elegant simplicity.",
+                "human_preference_injection": "In scientific diagrams, true minimalist execution is achieved by presenting high-density, complex information with clean, uncluttered formatting, rather than by artificially omitting essential data to create empty space. Maximizing the data-to-ink ratio requires elegantly organizing necessary details without superfluous decorations, ensuring the presentation is both highly informative and visually refined.",
+                "weight": 0.15
+            }
+        ],
+        "Structure": {
+            "Visual Organizational Layout": [
+                {
+                    "criterion_name": "Clear Rooting and Directional Flow",
+                    "explanation": "Evaluates the clarity with which the diagram establishes the origin (root or common ancestor) and the directional progression of divergence (e.g., time or evolutionary steps). Regardless of the chosen geometry (rectangular, circular, or radial), the structural layout must intuitively guide the reader from the primordial state to the terminal nodes without spatial ambiguity.",
+                    "human_preference_injection": "A superior diagram maintains an unambiguous, continuous visual flow from the root to the terminal nodes, even across deep, multi-tiered hierarchies. Layouts that intuitively guide the eye through complex levels of divergence are preferred over overly simplified structures that fail to demonstrate a complete directional progression.",
+                    "weight": 0.1
+                },
+                {
+                    "criterion_name": "Clean Branch Routing and Spatial Equilibrium",
+                    "explanation": "Assesses the topological neatness and spatial distribution of the tree. Branches must be routed to strictly avoid unnecessary crossings or visual entanglement. Terminal nodes (leaves) should be evenly distributed across the available canvas, maintaining a harmonious spatial equilibrium and consistent density that prevents localized overcrowding or unjustified empty spaces.",
+                    "human_preference_injection": "A superior diagram successfully maintains clean, non-overlapping branch routing and harmonious spatial equilibrium even when managing high information density. Achieving neatness through a sparse, trivial layout with unjustified empty spaces is less preferred than effectively balancing a complex, densely populated tree across the available canvas.",
+                    "weight": 0.15
+                },
+                {
+                    "criterion_name": "Effective Clade Delineation and Grouping",
+                    "explanation": "Measures the diagram's structural capacity to visually partition distinct clades, sub-lineages, or hierarchical tiers. This involves the strategic use of spatial spacing, structural brackets, or bounding areas to cluster related descendants, thereby making the overarching architecture and parent-child dependencies immediately comprehensible without cluttering the visual field.",
+                    "human_preference_injection": "A superior diagram visually groups related informational elements across all hierarchical depths, down to the finest granular details. Conversely, diagrams that oversimplify the structure by only grouping superficial, high-level categories are considered inferior.",
+                    "weight": 0.15
+                }
+            ],
+            "Logical Accuracy": [
+                {
+                    "criterion_name": "Topological Fidelity and Branching Accuracy",
+                    "explanation": "Evaluates the strict logical correspondence between the diagram's branching structure and the scientific data. It ensures that all bifurcations, multifurcations, and sister-group pairings accurately reflect the established genealogical relationships or evolutionary history, completely devoid of structural hallucinations or erroneous conflations of distinct lineages.",
+                    "human_preference_injection": "Superior topological fidelity requires the diagram to explicitly and accurately map specific terminal entities to their correct parent categories, demonstrating precise structural correspondence with the source text. A taxonomy that only outlines abstract high-level groups without connecting them to their specific instances fails to fully represent the established scientific relationships.",
+                    "weight": 0.25
+                },
+                {
+                    "criterion_name": "Quantitative Proportionality of Branch Lengths",
+                    "explanation": "Assesses the structural accuracy of the edges (branches) when they are intended to convey quantitative metrics. If the dendrogram utilizes branch lengths to represent evolutionary time, genetic distance, or degree of divergence, these lengths must be proportionally accurate and logically consistent with the underlying data, avoiding arbitrary scaling that could mislead the reader.",
+                    "human_preference_injection": "Even in the absence of a formal numerical scale, a superior diagram logically aligns its branch lengths and node placements along a spatial axis to accurately reflect the chronological sequence of evolutionary milestones.",
+                    "weight": 0.2
+                },
+                {
+                    "criterion_name": "Appropriate Granularity of Lineage Extraction",
+                    "explanation": "Measures the structural depth and completeness of the dendrogram. The diagram must successfully extract and integrate pivotal transitional nodes, core evolutionary branches, and necessary sub-lineages articulated in the source text. It must strike a balance, avoiding an overly rudimentary structure that omits crucial divergence events, while also preventing a mechanical overload of redundant nodes that obfuscates the primary evolutionary trajectory.",
+                    "human_preference_injection": "Superior granularity is achieved by integrating specific temporal markers and distinct sub-lineage variants that explicitly map the chronological progression of the evolutionary trajectory. This depth ensures the diagram captures pivotal transitional nodes and internal developments essential to the narrative, avoiding a rudimentary overview of broad categories.",
+                    "weight": 0.15
+                }
+            ]
+        }
+    }
+}
+{
+    "id": 3,
+    "class": "Phased Evolution",
+    "number": 10,
+    "filepath": "",
+    "dimension_weight": {
+        "Structure": 0.45,
+        "Aesthetics": 0.15,
+        "Content": 0.4
+    },
+    "criteria": {
+        "Aesthetics": [
+            {
+                "criterion_name": "Sequential Color Harmony and Functional Contrast",
+                "explanation": "Evaluates the use of color palettes to aesthetically represent evolutionary progression and qualitative shifts. Colors should be harmoniously applied to visually differentiate discrete phases (e.g., using sequential hues or varying saturation) while maintaining a unified overall palette. Additionally, it assesses whether there is sufficient aesthetic contrast between the background of each 'stage block' and the intricate micro-structures within it, avoiding visually clashing or fluorescent schemes.",
+                "human_preference_injection": "Superior diagrams utilize nuanced, continuous color gradients rather than stark, primary hues to harmoniously represent sequential evolutionary shifts. Additionally, employing a soft, neutral background ensures optimal functional contrast, allowing intricate foreground elements to stand out clearly without visual clashing or fatigue.",
+                "weight": 0.35
+            },
+            {
+                "criterion_name": "Stylistic Coherence Across Phases",
+                "explanation": "Assesses the uniformity of the visual language across all partitioned spatial blocks. Despite depicting different evolutionary states or paradigm shifts, the graphical properties—such as 2D/3D rendering styles, stroke weights, shading techniques, and icon design—must remain strictly consistent. This prevents the diagram from appearing as a disjointed collage and ensures that visual variations reflect actual systemic changes rather than arbitrary aesthetic inconsistencies.",
+                "human_preference_injection": "A superior diagram maintains a universally unified rendering style across both macro-level environments and micro-level components, ensuring all elements appear to belong to the same visual universe. Mixing fundamentally different graphical languages—such as combining flat, rigid geometric icons with 3D technical wireframes—creates a disjointed collage effect and must be penalized.",
+                "weight": 0.35
+            },
+            {
+                "criterion_name": "Typographic Hierarchy and Legibility",
+                "explanation": "Focuses on the aesthetic styling of text to support the diagram's dual-layered narrative. Font properties (scaling, weight, and style) must be judiciously applied to create a clear visual distinction between macro-level phase labels (e.g., 'Stage 1', 'Stage 2') and the micro-level annotations detailing specific reactions or architectures within the blocks, ensuring high legibility without visual strain.",
+                "human_preference_injection": "Diagrams that successfully establish a clear visual hierarchy between macro-level titles and micro-level annotations via consistent typography should be scored equally high, regardless of whether the text is embedded within shapes or placed on a neutral background. Both layout styles are functionally equivalent and equally optimal as long as they maintain high readability without causing visual fatigue.",
+                "weight": 0.15
+            },
+            {
+                "criterion_name": "Visual Polish and Noise Reduction",
+                "explanation": "Evaluates the overall cleanliness and professional finish of the diagram. Given the high density of micro-structures and key elements within each evolutionary phase, the design must be free of superficial, non-functional decorations (such as excessive 3D lighting, heavy drop shadows, or distracting background textures) and spatial distortions (stretched or compressed graphics) that could obscure the core scientific message and diminish the diagram's academic rigor.",
+                "human_preference_injection": "A more professional standard of expression, characterized by clean, publication-quality polish without non-functional visual noise, is encouraged. Conversely, unrefined sketch-like visuals and repetitive content caused by generative artifacts are penalized.",
+                "weight": 0.15
+            }
+        ],
+        "Content": {
+            "Visual Element Representation": [
+                {
+                    "criterion_name": "Distinctive Rendering of Phase-Specific Elements",
+                    "explanation": "Evaluates the graphical fidelity and semantic precision of the specific micro-structures, architectures, or components depicted within each discrete evolutionary stage. The visual elements must be sharply rendered, free from generative morphological distortion, and intuitively convey the unique qualitative state of the system at that specific phase without unnecessary decorative redundancy.",
+                    "human_preference_injection": "Superior diagrams utilize stylistically unified, recognizable iconography that avoids crude geometric abstractions or artificial patterns, ensuring phase-specific elements maintain high graphical fidelity while intuitively communicating their qualitative state.",
+                    "weight": 0.15
+                },
+                {
+                    "criterion_name": "Precision of Transitional and Transformative Symbology",
+                    "explanation": "Assesses the clarity and accuracy of the graphical motifs used to represent the actual evolution or paradigm shift between phases (e.g., specific reaction arrows, degradation symbols, assembly icons). These elements must unambiguously communicate the nature of the transformation (e.g., reversible vs. irreversible, gradual vs. abrupt) without visual garbling or semantic duplication.",
+                    "human_preference_injection": "Superior diagrams employ explicit graphical motifs, such as directional vectors, to unambiguously define the specific physical or mechanistic forces driving a transition. Utilizing explicit transformative symbology is preferred over relying on viewers to infer these dynamic changes solely from implicit morphological differences between static phase blocks.",
+                    "weight": 0.15
+                },
+                {
+                    "criterion_name": "Legend Adequacy for Multi-Stage Variables",
+                    "explanation": "Measures the provision and clarity of legends specifically required to decode elements that persist, mutate, or emerge across the evolutionary timeline. It ensures that color schemes, non-standard symbols, and abbreviations used to track specific components through various phases are explicitly defined, preventing referential ambiguity.",
+                    "human_preference_injection": "A formal, consolidated legend box that explicitly defines color schemes and symbols is preferred over relying on scattered, in-text color-coded labels. This centralized approach ensures immediate, unambiguous decoding of persistent variables across all evolutionary phases, effectively eliminating referential ambiguity.",
+                    "weight": 0.1
+                }
+            ],
+            "Content Accuracy": [
+                {
+                    "criterion_name": "Factual Accuracy of Intra-Phase Micro-States",
+                    "explanation": "Evaluates the scientific correctness of the specific details (e.g., chemical/physical reactions, system architectures, data labels) isolated within each individual stage block. The informational elements populating a specific phase must strictly adhere to the established facts, parameters, and mechanisms described in the source paper for that exact point in the evolution.",
+                    "human_preference_injection": "Superior diagrams explicitly incorporate and accurately label the specific micro-mechanisms and quantitative parameters dictated by the source text within each individual stage block. High scores are awarded for strict factual fidelity that avoids both the omission of crucial phase-specific details and the introduction of out-of-scope informational elements.",
+                    "weight": 0.2
+                },
+                {
+                    "criterion_name": "Logical Rigor of Inter-Phase Transformations",
+                    "explanation": "Assesses the factual and logical coherence of the system's evolution from one phase to the next. It ensures strict logical correspondence of informational elements across procedural stages, penalizing any unexplained disappearance, spontaneous generation, or erroneous mutation of core components between phases that contradicts the paper's mechanistic logic.",
+                    "human_preference_injection": "High-scoring diagrams maintain strict mechanistic continuity by explicitly tracking the step-by-step transformation of specific internal components across all intermediate phases, rather than jumping abruptly to disconnected macroscopic outcomes. This ensures a rigorous logical correspondence where every element's evolution, appearance, or alteration is fully justified by the preceding transitional states.",
+                    "weight": 0.2
+                },
+                {
+                    "criterion_name": "Informational Depth of Evolutionary Triggers and Conditions",
+                    "explanation": "Measures the diagram's capacity to extract and articulate the specific conditions, catalysts, or environmental state transitions (e.g., temperature thresholds, time intervals, applied forces) that drive the evolution from one phase to another. High scores are awarded for translating these crucial auxiliary details into substantive, accurate visual content rather than presenting a superficial macroscopic overview.",
+                    "human_preference_injection": "Superior diagrams explicitly annotate the specific quantitative parameters and mechanistic catalysts—such as exact time scales or physical triggers—that drive phase transitions. Translating these crucial auxiliary details into explicit labels provides greater informational depth than merely illustrating the macroscopic states.",
+                    "weight": 0.1
+                },
+                {
+                    "criterion_name": "Terminological Consistency Across the Evolutionary Timeline",
+                    "explanation": "Ensures that abbreviations, variable nomenclatures, and technical terminology remain strictly consistent or follow a logically sound, paper-aligned naming convention as the system evolves across multiple stages. It penalizes the introduction of discrepant labels for the same underlying entity across different phases.",
+                    "human_preference_injection": "Superior diagrams strictly utilize the exact technical nomenclature established in the source text across all evolutionary phases, avoiding colloquial variations or the introduction of out-of-scope vocabulary. Maintaining this strict lexical alignment ensures that the terminology remains academically precise and perfectly synchronized with the paper's established narrative.",
+                    "weight": 0.1
+                }
+            ]
+        },
+        "Structure": {
+            "Visual Organizational Layout": [
+                {
+                    "criterion_name": "Phase Demarcation and Spatial Partitioning",
+                    "explanation": "Evaluates the effectiveness of the visual boundaries used to separate distinct evolutionary stages. The diagram must utilize clear spatial partitioning (e.g., distinct panels, bounding boxes, or tiered layouts) to physically isolate different phases, preventing the conflation of disparate stages while maintaining an even spatial distribution across the canvas.",
+                    "human_preference_injection": "Superior phase demarcation utilizes organic, canvas-filling boundaries that maintain an even spatial distribution across the entire layout, rather than relying on rigid, artificially constrained geometric partitions that create unbalanced negative space. This approach effectively isolates distinct evolutionary stages while preserving a natural, physically intuitive spatial context.",
+                    "weight": 0.15
+                },
+                {
+                    "criterion_name": "Evolutionary Trajectory and Flow",
+                    "explanation": "Assesses the clarity of the reading path and the directionality of the evolutionary progression. The layout must provide a seamless visual flow (whether linear, cyclical, or branching) using clean topological routing, clear arrow directionality, or timeline axes, ensuring the macro-progression of the system is immediately intuitive.",
+                    "human_preference_injection": "A superior diagram establishes an intuitive, multi-stage reading path—such as a structured grid or timeline—that seamlessly accommodates the full chronological complexity of the system's macro-progression. Relying on an inherent, well-ordered spatial flow to guide the viewer through extended evolutionary stages is preferred over using explicit connective arrows to depict an overly simplified trajectory.",
+                    "weight": 0.2
+                },
+                {
+                    "criterion_name": "Intra-Phase Hierarchical Organization",
+                    "explanation": "Examines the structural arrangement of micro-details within individual stage blocks. It evaluates whether the internal elements (e.g., micro-structures, reactions) are logically grouped and hierarchically subordinated to the overarching phase, avoiding haphazard layouts, element overcrowding, or spatial detachment of related annotations.",
+                    "human_preference_injection": "Superior organization is achieved by spatially integrating annotations directly within or in immediate proximity to the micro-structures they describe, preventing the logical detachment of details from their parent components. This ensures that internal hierarchies are immediately intuitive and that related annotations are physically anchored to the specific elements they define.",
+                    "weight": 0.15
+                }
+            ],
+            "Logical Accuracy": [
+                {
+                    "criterion_name": "Sequential and Topological Fidelity",
+                    "explanation": "Measures the strict adherence of the diagram's macro-topology to the evolutionary sequence described in the source text. The structural order of phases must be perfectly aligned with the factual assertions of the paper, completely avoiding structural hallucinations, incorrect ordering, or the illogical conflation of distinct evolutionary stages.",
+                    "human_preference_injection": "Logically extending the timeline with scientifically valid, contextual stages to complete a broader macro-cycle is acceptable and must not be penalized as a structural hallucination.",
+                    "weight": 0.2
+                },
+                {
+                    "criterion_name": "Transitional Logic and Mechanism Mapping",
+                    "explanation": "Evaluates the accuracy and depth with which the qualitative transformations or paradigm shifts between phases are structurally represented. The diagram must precisely map the deep-level associations, conditional branches, or transitional mechanisms that drive the evolution from one discrete state to the next, rather than merely placing boxes side-by-side without logical connective tissue.",
+                    "human_preference_injection": "Superior diagrams visually integrate the underlying physical drivers of change—such as continuous environmental gradients—directly into the connective pathways between evolutionary states. This continuous mapping of transitional mechanisms provides a deeper, more accurate logical link between phases than relying solely on discrete, isolated pointers.",
+                    "weight": 0.15
+                },
+                {
+                    "criterion_name": "Intra-Phase Structural Abstraction",
+                    "explanation": "Assesses the logical extraction and structural integration of the specific micro-architectures or key elements unique to each phase. It ensures that high-value internal details are accurately distilled without causing detail overload (which obfuscates the core logic) or suffering from an explanatory deficit (where crucial intra-phase mechanisms are omitted).",
+                    "human_preference_injection": "Superior abstraction utilizes organic, irregular morphologies to intuitively represent non-uniform micro-structures, avoiding overly simplistic geometric primitives that imply unrealistic symmetry or discrete layering. This approach ensures that distilled representations maintain physical fidelity to the system's inherent complexity without succumbing to reductive idealization.",
+                    "weight": 0.15
+                }
+            ]
+        }
+    }
+}
+{
+    "id": 4,
+    "class": "Technical Roadmap",
+    "number": 15,
+    "filepath": "",
+    "dimension_weight": {
+        "Structure": 0.5,
+        "Aesthetics": 0.15,
+        "Content": 0.35
+    },
+    "criteria": {
+        "Structure": {
+            "Visual Organizational Layout": [
+                {
+                    "criterion_name": "Directional Flow and Reading Path",
+                    "explanation": "Evaluates the clarity and consistency of the primary task trajectory. The roadmap must adhere to a highly intuitive reading pattern (e.g., strictly left-to-right or top-to-bottom) to signify chronological progression. Inverse directional flows must be strictly restricted to denoting feedback loops, error reporting, or iterative corrections, avoiding any spatial arrangement that confuses the sequence of operations.",
+                    "human_preference_injection": "A superior reading path maps the complete conceptual trajectory from fundamental inputs to high-level knowledge outcomes, ensuring the primary flow signifies a meaningful chronological progression of the research goal. Feedback loops are most effective when they contextualize the entire workflow within the broader iterative scientific cycle, providing a clear and intuitive roadmap of the research lifecycle.",
+                    "weight": 0.15
+                },
+                {
+                    "criterion_name": "Phased Segmentation and Containerization",
+                    "explanation": "Assesses the strategic use of spatial partitioning to manage visual complexity. The diagram should effectively employ explicit stage markers, bounding boxes, or panels to aggregate parallel processes, categorize attribute-related tasks, and clearly delineate distinct phases of prolonged procedures, thereby facilitating macroscopic progress management and reducing visual clutter.",
+                    "human_preference_injection": "Superior containerization strategically aligns spatial partitions with the specific, logical procedural phases of the scientific workflow rather than relying on broad, superficial panels that oversimplify the process. Effective segmentation manages visual complexity by accurately grouping related tasks to reflect the true structural progression of the methodology.",
+                    "weight": 0.15
+                },
+                {
+                    "criterion_name": "Topological Routing and Visual Clarity",
+                    "explanation": "Measures the neatness and efficiency of the diagram's connective tissue. Connecting lines and arrows must be routed to minimize unnecessary crossings and overlapping. The spatial distribution should maintain a harmonious balance, ensuring that overarching architectural flows are easily distinguishable from localized, nested sub-tasks.",
+                    "human_preference_injection": "Superior topological routing relies on precise, orthogonal line work and the strategic use of varying line styles to clearly distinguish overarching architectural flows from secondary paths or feedback loops. This approach maintains a harmonious spatial balance and maximizes visual clarity, deliberately avoiding overly thick, visually heavy connective elements that clutter the composition and disrupt structural neatness.",
+                    "weight": 0.15
+                }
+            ],
+            "Logical Accuracy": [
+                {
+                    "criterion_name": "Protocol Completeness and Granularity",
+                    "explanation": "Evaluates the structural abstraction and depth of the workflow. The roadmap must capture all pivotal transitional steps, core mechanistic branches, and necessary procedural details required for scientific reproducibility. It must strike an optimal balance, avoiding both superficial macroscopic overviews (insufficient granularity) and the mechanical enumeration of redundant nodes (detail overload).",
+                    "human_preference_injection": "Superior protocol completeness requires structurally unpacking complex methodologies into distinct, reproducible procedural nodes rather than collapsing multi-stage processes into superficial, macroscopic summary blocks. The workflow must explicitly map all pivotal transitional steps and mechanistic branches to provide sufficient architectural depth for scientific reproducibility.",
+                    "weight": 0.2
+                },
+                {
+                    "criterion_name": "Precision of Non-Linear and Temporal Logic",
+                    "explanation": "Assesses the accurate topological mapping of complex decision-making processes. The diagram must flawlessly reconstruct non-linear mechanisms explicitly articulated in the source text, including branching (path selection via 'If-Then' logic), convergence (funnel-based screening/filtering), and iteration (corrective circuits via 'While-Loop' logic), ensuring strict fidelity to the original scientific intent.",
+                    "human_preference_injection": "Superior diagrams explicitly map the topological convergence of parallel workflows and the exact conditional logic governing stage transitions, rather than collapsing multi-path decision-making into simplified linear nodes. Accurately reconstructing these non-linear mechanisms is essential to preserve the structural fidelity of the original scientific methodology.",
+                    "weight": 0.2
+                },
+                {
+                    "criterion_name": "Structural Integration of Multimodal States",
+                    "explanation": "Evaluates the logical anchoring of supplementary visual data within the structural framework. When the roadmap incorporates state visualizations (morphological/qualitative transformations) or heterogeneous data (reference standards, code snippets), these elements must be precisely and unambiguously linked to their corresponding procedural nodes, avoiding spatial detachment, referential ambiguity, or structural hallucination.",
+                    "human_preference_injection": "Superior diagrams actively embed relevant multimodal visualizations—such as data states or qualitative transformations—directly into their corresponding procedural nodes rather than relying solely on abstract text labels. This precise structural anchoring provides immediate visual context for the heterogeneous data processed at each specific workflow stage.",
+                    "weight": 0.15
+                }
+            ]
+        },
+        "Content": {
+            "Visual Element Representation": [
+                {
+                    "criterion_name": "Semantic Precision of Protocol Symbols",
+                    "explanation": "Evaluates whether the graphical shapes, icons, and symbols used to represent specific tasks, data types, or logical gates (e.g., diamonds for decision branching, cylinders for databases, specific icons for laboratory equipment) intuitively and accurately convey their standardized scientific or engineering meanings. The symbols must be highly distilled and devoid of non-functional ornamentation that could impede the rapid comprehension of the protocol.",
+                    "human_preference_injection": "Superior semantic precision is achieved by employing distinct, standardized visual encodings—whether through specific geometric shapes or intuitive icons—that explicitly categorize the functional roles of nodes beyond textual labels. Both approaches are equally valid provided the symbols are highly distilled and consistently represent the underlying scientific or logical operations.",
+                    "weight": 0.15
+                },
+                {
+                    "criterion_name": "High-Fidelity Multimodal Micro-Rendering",
+                    "explanation": "Assesses the visual clarity and generative quality of integrated multimodal elements, such as state visualizations (e.g., morphological changes in samples) and heterogeneous reference data (e.g., anatomical diagrams, code snippets, genetic maps). These micro-components must exhibit sharp edges, accurate proportions, and crisp typography, remaining entirely free from AI-generated artifacts, blurring, or morphological distortions that would compromise their utility as execution benchmarks.",
+                    "human_preference_injection": "High-fidelity micro-rendering is defined by the absence of generative artifacts and the preservation of sharp, accurate morphological details, irrespective of the specific artistic medium or rendering style. As long as integrated elements maintain crisp edges and structural clarity to serve as reliable procedural benchmarks, 2D vector-based and 3D volumetric representations are considered equally valid.",
+                    "weight": 0.15
+                },
+                {
+                    "criterion_name": "Legend Adequacy for Phased Containerization",
+                    "explanation": "Measures the presence, clarity, and completeness of explanatory legends specifically related to the roadmap's containerization and phased progression. If color schemes, border styles, or specific shading are used to categorize parallel processes, denote distinct temporal phases, or indicate task attributes (e.g., automated vs. manual steps), these visual encodings must be explicitly and legibly decoded in a well-positioned legend.",
+                    "human_preference_injection": "Even in the absence of an explicit formal legend, a superior diagram employs a strictly systematic visual encoding scheme that functions as an intuitive, implicit legend to categorize distinct procedural phases. Applying colors or boundaries arbitrarily and decoratively, rather than as a consistent mechanism to visually decode specific task attributes or containers, severely undermines this criterion.",
+                    "weight": 0.15
+                }
+            ],
+            "Content Accuracy": [
+                {
+                    "criterion_name": "Actionable Detail and Parameter Richness",
+                    "explanation": "Evaluates the depth and utility of the extracted information. To ensure the roadmap is a reproducible protocol, it must transcend macroscopic labels by embedding high-value, actionable details such as specific experimental conditions, exact dosages, temporal intervals, algorithmic parameters, or hardware specifications. The diagram should maximize its independent explanatory power without devolving into unstructured textual clutter.",
+                    "human_preference_injection": "A superior diagram maximizes independent explanatory power by explicitly embedding exact quantitative thresholds, specific dataset identifiers, and precise experimental variables rather than abstracting them into generic methodological labels. This high-value parameter richness ensures the visual protocol possesses the technical depth required for true scientific reproducibility.",
+                    "weight": 0.2
+                },
+                {
+                    "criterion_name": "Precision of Non-Linear Conditions and State Data",
+                    "explanation": "Focuses on the factual and logical accuracy of the data populating non-linear mechanisms (branching, convergence, iteration) and state transformations. The specific thresholds, mathematical conditions (e.g., 'p < 0.05', 'If-Then' criteria), and qualitative/quantitative descriptions of state changes must strictly correspond to the original paper's logic. Any hallucination or omission of critical decision-making criteria severely undermines the roadmap's validity.",
+                    "human_preference_injection": "Strictly penalize ambiguous bidirectional arrows used to depict iterative feedback or parameter updates. Algorithmic flowcharts must explicitly use distinct directed paths to differentiate forward logical progression from backward cyclic loops.",
+                    "weight": 0.2
+                },
+                {
+                    "criterion_name": "Terminological and Factual Consistency",
+                    "explanation": "Assesses the strict adherence to scientific nomenclature, standardized abbreviations, and variable naming conventions as established in the source text. All textual labels, alphanumeric data, and scientific terms within the roadmap must be factually accurate and entirely devoid of typographical errors, erroneous mathematical subscripts, or undefined non-standard abbreviations that could introduce execution ambiguity.",
+                    "human_preference_injection": "Priority is given to the inclusion of dense, domain-specific scientific nomenclature that accurately reflects the technical depth of the source material over sparse, high-level terminology. Technical richness and terminological precision are considered more vital for scientific utility than the absolute absence of minor typographical errors in overly simplified descriptions.",
+                    "weight": 0.15
+                }
+            ]
+        },
+        "Aesthetics": [
+            {
+                "criterion_name": "Functional and Harmonious Color Palette",
+                "explanation": "Evaluates the aesthetic selection and application of color to visually reinforce the roadmap's phased progression and containerization. Colors should be visually harmonious, adhering to professional scientific standards, while functionally differentiating distinct stages, parallel processes, or decision branches (e.g., If-Then logic). The palette must ensure high contrast and accessibility without resorting to chaotic, highly saturated, or fluorescent schemes.",
+                "human_preference_injection": "A superior scientific color palette employs modern, flat, and visually harmonious tones (such as muted pastels) to functionally differentiate workflow stages while maintaining a clean, professional aesthetic. The application of color should strictly avoid heavy, dated gradients or complex tonal transitions that introduce unnecessary visual weight and compromise the diagram's academic rigor.",
+                "weight": 0.35
+            },
+            {
+                "criterion_name": "Stylistic Cohesion and Multimodal Integration",
+                "explanation": "Assesses the uniformity of the visual language across all graphical elements, which is especially critical when the roadmap integrates heterogeneous data (e.g., abstract flow blocks alongside concrete anatomical diagrams or state visualizations). The diagram must maintain consistent graphical properties—such as stroke weights, corner radii, and rendering styles (strictly adhering to either a cohesive 2D flat design or a unified 3D style)—preventing any discordant, collage-like visual fragmentation.",
+                "human_preference_injection": "Superior diagrams maintain a singular, unified rendering style and consistent graphical properties across all heterogeneous elements to prevent discordant, collage-like visual fragmentation. This ensures that abstract logical components and concrete visualizations share a cohesive visual language, avoiding the use of disparate design styles or non-functional decorative textures.",
+                "weight": 0.3
+            },
+            {
+                "criterion_name": "Typographic Hierarchy and Legibility",
+                "explanation": "Measures the aesthetic quality, scaling, and styling of text used throughout the roadmap. Font properties (e.g., weight, size, italics) must be judiciously applied to create a clear, aesthetically pleasing visual hierarchy that distinguishes macroscopic phase markers from microscopic task details or code snippets. Typography must remain crisp, high-resolution, and optimally readable against its background.",
+                "human_preference_injection": "Superior typographic hierarchy relies on balanced, judicious font scaling that differentiates macroscopic phases from microscopic details without creating disproportionately massive or overly bold focal points. Typography should maintain a uniform, professional aesthetic that guides the reader naturally, ensuring that exaggerated text sizing does not visually overwhelm the surrounding procedural flow.",
+                "weight": 0.2
+            },
+            {
+                "criterion_name": "Visual Polish and Minimalist Execution",
+                "explanation": "Evaluates the overall graphic refinement and the deliberate avoidance of visual noise. The roadmap should feature clean line work, standardized and aesthetically pleasing arrow typologies for directional flow, and a minimalist approach that eschews non-functional decorations (e.g., superfluous drop shadows, exaggerated gradients, or complex background textures). The visual execution must project academic rigor and seriousness.",
+                "human_preference_injection": "True visual polish in scientific diagrams is achieved through strict minimalism that maximizes the data-to-ink ratio by deliberately eschewing non-functional \"chartjunk\" such as background gradients, 3D bevels, and drop shadows. A higher score reflects a clean, unembellished aesthetic that projects academic rigor by avoiding superfluous decorative textures and visual noise.",
+                "weight": 0.15
+            }
+        ]
+    }
+}
+{
+    "id": 5,
+    "class": "Graphical Abstract",
+    "number": 15,
+    "filepath": "",
+    "dimension_weight": {
+        "Structure": 0.41,
+        "Content": 0.4,
+        "Aesthetics": 0.19
+    },
+    "criteria": {
+        "Content": {
+            "Visual Element Representation": [
+                {
+                    "criterion_name": "Self-Explanatory Element Design and Embedded Legends",
+                    "explanation": "Given that a graphical abstract must function entirely independently of the main text, this criterion evaluates whether all visual elements (icons, non-standard symbols, color encodings) are immediately intuitive or explicitly defined within the panel. It penalizes the absence of necessary embedded legends or direct text annotations that force the reader to guess the meaning of specific graphical components.",
+                    "human_preference_injection": "We strongly prefer diagrams featuring richer explanatory details and comprehensive embedded legends. It is highly rewarded to provide a higher density of explicit annotations that maximize standalone clarity and reduce reader ambiguity.",
+                    "weight": 0.15
+                },
+                {
+                    "criterion_name": "High-Fidelity Micro-Rendering and Typographic Legibility",
+                    "explanation": "Assesses the crispness and clarity of individual visual components and text. In a highly condensed single-panel summary, critical text, formula labels, and minute symbols must be rendered in high resolution, completely free from typographical overlapping, blurring, or unidentifiable garbled characters that impede rapid comprehension.",
+                    "human_preference_injection": "We strongly prefer absolute sharpness and legibility of text and symbols, heavily prioritizing technical clarity over complex illustrative styles. Simple vector graphics and complex 3D models are equally favored, provided they maintain high resolution and zero blurring.",
+                    "weight": 0.15
+                },
+                {
+                    "criterion_name": "Absence of Generative Distortion and Semantic Duplication",
+                    "explanation": "Evaluates the morphological accuracy of localized graphical elements (e.g., cellular structures, molecular models, apparatuses). It strictly penalizes AI-generated anomalies, physically impossible structural linkages, and the confusing use of disparate visual entities to represent a singular scientific concept.",
+                    "human_preference_injection": "We strongly prefer morphological correctness and logical connectivity of scientific elements over specific artistic styles. Highest preference is given to accurate depictions of biological or material entities without generative artifacts or impossible physical structures.",
+                    "weight": 0.15
+                }
+            ],
+            "Content Accuracy": [
+                {
+                    "criterion_name": "Core Narrative Completeness",
+                    "explanation": "Measures the comprehensive extraction and presence of informational elements necessary to tell the complete scientific story. The content must include specific data points, text labels, and graphical motifs that collectively cover the research background, underlying mechanisms, and principal conclusions, ensuring no critical phase of the abstract is omitted.",
+                    "human_preference_injection": "We highly prioritize diagrams that explicitly incorporate specific, granular text labels and graphical motifs from the research instead of relying on generic summaries. It is strongly preferred to visually represent concrete mechanisms and examples to tell the complete scientific story.",
+                    "weight": 0.2
+                },
+                {
+                    "criterion_name": "Factual and Terminological Precision",
+                    "explanation": "Strictly evaluates the factual correctness of the depicted information. All data labels, technical nomenclature, abbreviations, and mechanistic depictions must perfectly align with the paper's established facts and recognized scientific principles, remaining entirely devoid of logical fallacies, hallucinations, or terminological ambiguities.",
+                    "human_preference_injection": "We strongly prefer diagrams utilizing exact, highly specific technical nomenclature and abbreviations from the source text over generalized labels. Strict spatial and biological accuracy is heavily favored, and any minor structural misrepresentations are strictly penalized.",
+                    "weight": 0.2
+                },
+                {
+                    "criterion_name": "Optimal Informational Density and Noise Reduction",
+                    "explanation": "Assesses the diagram's ability to balance explanatory depth with the condensed nature of an abstract. It rewards the inclusion of high-value, granular details (e.g., specific parameters, key variables) that enhance independent comprehension, while heavily penalizing the accumulation of irrelevant informational noise or trivial details that obscure the core scientific message.",
+                    "human_preference_injection": "We strongly prefer optimal information density achieved by structurally integrating high-value elements without visual clutter. Preserving comprehensive scientific depth for independent comprehension is highly rewarded over achieving clarity merely by omitting critical details.",
+                    "weight": 0.15
+                }
+            ]
+        },
+        "Aesthetics": [
+            {
+                "criterion_name": "Functional and Harmonious Color Palette",
+                "explanation": "Evaluates the selection and application of color. The palette must be visually unified, aesthetically pleasing, and aligned with professional scientific standards. Colors should be used deliberately to create functional contrast—differentiating distinct data modules or highlighting key findings—without resorting to highly saturated, fluorescent, or clashing schemes that cause visual fatigue or obscure foreground elements.",
+                "human_preference_injection": "We strongly prefer a restrained, unified base tone with deliberate, high-contrast accents to functionally differentiate key mechanisms. Highly saturated or overly illustrative color schemes are heavily penalized for violating scientific standards and introducing visual chaos.",
+                "weight": 0.35
+            },
+            {
+                "criterion_name": "Visual Cohesion and Stylistic Unity",
+                "explanation": "Assesses the consistency of the visual language across all graphical elements. A high-quality graphical abstract must avoid a fragmented, 'collage-like' appearance. This requires standardization of graphical properties such as stroke weights, corner radii, and rendering styles (e.g., maintaining a consistent 2D flat design or a uniform 3D volumetric style) to ensure a seamless and professional aesthetic integration.",
+                "human_preference_injection": "We strongly prefer strict internal visual consistency and seamless integration of all graphical elements, heavily penalizing any disjointed collage effect. Purely flat 2D vector styles and cohesive 3D volumetric designs are equally favored.",
+                "weight": 0.35
+            },
+            {
+                "criterion_name": "Typographic Legibility and Hierarchy",
+                "explanation": "Focuses on the aesthetic execution of text within the diagram. Typography must be appropriately scaled and styled (using font weights, italics, and clean font families) to establish a clear visual hierarchy. The text must maintain high contrast against its background to ensure optimal readability and visual comfort, supporting the diagram's role as a standalone summary.",
+                "human_preference_injection": "We highly prioritize a clear typographic hierarchy established through deliberate variations in font size, weight, and clean styling. Uniformly heavy, bold typography with excessive outlines or shadows is heavily penalized for flattening hierarchy and reducing legibility.",
+                "weight": 0.15
+            },
+            {
+                "criterion_name": "Visual Polish and Restraint",
+                "explanation": "Evaluates the refinement of the diagram's graphic design and the absence of visual noise. The diagram should be free from non-functional decorative elements (e.g., excessive drop shadows, exaggerated lighting effects, or complex background textures) and must maintain correct aspect ratios for all icons and shapes, avoiding any spatial distortion or stretching that compromises aesthetic proportion.",
+                "human_preference_injection": "We strongly prefer exceptional graphic precision and elegant simplicity, strictly avoiding any non-functional decorative noise. A masterful balance of meticulous design details and absolute visual restraint is highly rewarded.",
+                "weight": 0.15
+            }
+        ],
+        "Structure": {
+            "Visual Organizational Layout": [
+                {
+                    "criterion_name": "Intuitive Narrative Flow",
+                    "explanation": "Evaluates the clarity and seamlessness of the diagram's reading path. Given the standalone narrative function of a graphical abstract, the layout must establish an unambiguous starting point and a clear directional progression (e.g., left-to-right, top-to-bottom, or cyclical) that intuitively guides the viewer through the research timeline (from background/problem to methodology, and finally to results/conclusions) without visual confusion.",
+                    "human_preference_injection": "We strongly prefer logically segmented, multi-layered layouts using clear structural hierarchies to seamlessly connect different research stages. Organizing complex processes into distinct but cohesive pathways is highly favored over simplified trajectories lacking macro-micro transitions.",
+                    "weight": 0.2
+                },
+                {
+                    "criterion_name": "Strategic Modularization",
+                    "explanation": "Assesses the effective use of spatial grouping, bounding boxes, or visual partitioning to separate distinct conceptual stages of the research (e.g., material synthesis, biological application, mechanistic pathways). Proper modularization prevents the conflation of disparate experimental phases and reduces cognitive load, allowing readers to digest the single-panel illustration in logical, manageable chunks.",
+                    "human_preference_injection": "We strongly prefer diagrams explicitly utilizing distinct visual boundaries or inset panels to compartmentalize complex mechanisms into granular sub-modules. This explicit structural division is heavily favored over continuous, unstructured layouts to reduce cognitive load.",
+                    "weight": 0.15
+                },
+                {
+                    "criterion_name": "Spatial Equilibrium",
+                    "explanation": "Measures the harmonious distribution of structural elements across the single-panel canvas. The layout should avoid arbitrary congestion or unjustified empty spaces, maintaining a balanced density of information nodes. This ensures that the spatial scaling of modules accurately reflects their relative importance to the overall scientific narrative.",
+                    "human_preference_injection": "We strongly prefer optimal spatial balance achieved by maintaining consistent element density and avoiding clutter or unjustified voids. Diagrams successfully demonstrating this harmonious layout are equally favored and highly rewarded.",
+                    "weight": 0.1
+                }
+            ],
+            "Logical Accuracy": [
+                {
+                    "criterion_name": "Holistic Narrative Completeness",
+                    "explanation": "Evaluates whether the structural framework successfully encapsulates the entire logical arc of the paper's abstract. The diagram must not be confined to a single isolated mechanism but must structurally accommodate the comprehensive story: the research context/problem, the core intervention or methodology, and the principal findings or conclusions.",
+                    "human_preference_injection": "We highly prioritize structurally representing the full breadth of the research scope, including granular sub-categories and miscellaneous applications. An exhaustive representation of the narrative's extent is strongly preferred over a simplified summary of high-level sections.",
+                    "weight": 0.2
+                },
+                {
+                    "criterion_name": "Mechanistic and Causal Fidelity",
+                    "explanation": "Assesses the strict accuracy of the topological relationships depicted in the diagram. All structural connections—such as causal arrows, conditional branches, and hierarchical dependencies—must perfectly align with the factual assertions of the paper. It penalizes structural hallucinations, illogical intersections, or the misrepresentation of the underlying scientific mechanisms.",
+                    "human_preference_injection": "We strongly prefer strict topological accuracy that precisely depicts functional boundaries and spatial hierarchy of system components. Any structural misrepresentations, such as positioning internal elements at external interfaces, are heavily penalized.",
+                    "weight": 0.2
+                },
+                {
+                    "criterion_name": "Optimal Structural Abstraction",
+                    "explanation": "Examines the diagram's ability to distill lengthy textual narratives into a lucid visual skeleton. The structure must strike an optimal balance: it should extract high-value, core mechanistic details necessary for independent explanatory power, while rigorously filtering out redundant, secondary information that would cause detail overload and obscure the primary logical trajectory.",
+                    "human_preference_injection": "We strongly prefer a technically robust skeleton retaining essential methodological stages to ensure the diagram remains a self-contained scientific explanation. Preserving high-value technical details over over-simplification is highly prioritized.",
+                    "weight": 0.15
+                }
+            ]
+        }
+    }
+}
+{
+    "id": 6,
+    "class": "Experimental Setup Diagram",
+    "number": 10,
+    "filepath": "",
+    "dimension_weight": {
+        "Structure": 0.46,
+        "Aesthetics": 0.16,
+        "Content": 0.38
+    },
+    "criteria": {
+        "Content": {
+            "Visual Element Representation": [
+                {
+                    "criterion_name": "Standardized and Recognizable Component Symbology",
+                    "explanation": "Evaluates whether the hardware components (e.g., optical lenses, electrical resistors, fluidic pumps, sensors) are depicted using strictly standardized scientific symbols or highly recognizable, distilled morphological abstractions. The representation must strike a balance between realism and abstraction, avoiding extraneous non-functional ornamentation while ensuring the specific type of equipment is immediately identifiable to a domain expert.",
+                    "human_preference_injection": "High-quality scientific symbology prioritizes conventional, distilled schematic abstractions over highly realistic 3D illustrations. Excessive artistic realism introduces non-functional ornamentation that detracts from the immediate, standardized recognizability expected by domain experts.",
+                    "weight": 0.15
+                },
+                {
+                    "criterion_name": "High-Fidelity Micro-Rendering of Apparatus",
+                    "explanation": "Assesses the graphical quality of individual instruments and text labels. In experimental setups, precision is paramount; therefore, components must exhibit sharp, distinct edges and accurate proportions. The criterion strictly penalizes generative AI artifacts, such as 'melting' equipment, physically impossible structural fusions, blurred text, or garbled alphanumeric data that compromise the professional appearance of the scientific apparatus.",
+                    "human_preference_injection": "For this criterion, human preference strongly favors diagrams that exhibit sharp, technical precision, particularly rewarding the inclusion of high-fidelity micro-renderings (such as zoomed-in insets) to clearly depict critical microscopic interactions. Consequently, crisp, accurate graphical execution of the scientific apparatus is prioritized over glossy, stylized aesthetic polish.",
+                    "weight": 0.15
+                },
+                {
+                    "criterion_name": "Legend and Visual Encoding Adequacy",
+                    "explanation": "Measures the presence and clarity of legends or annotations used to decode abstract visual elements. This includes explaining abbreviations for custom hardware, defining non-standard symbols, and clarifying color encodings used to represent distinct physical flows (e.g., differentiating laser wavelengths, fluid types, or electrical vs. optical signal paths).",
+                    "human_preference_injection": "For the criterion of Legend and Visual Encoding Adequacy, human preference strongly favors diagrams that explicitly decode their visual elements through comprehensive text labels, annotations, or legends, rather than relying on the viewer's intuition or visual recognition alone. Even if a diagram utilizes elegant color coding or highly realistic renderings, it is considered inadequate if it fails to explicitly identify the specific hardware components, instruments, and physical flows depicted. A high-quality diagram must provide clear textual definitions for its visual encodings—ensuring that every critical piece of equipment and signal path is unambiguously identified. This explicit decoding eliminates guesswork, prevents misinterpretation of specialized scientific apparatus, and is prioritized over minimalist aesthetic approaches that omit necessary explanatory text.",
+                    "weight": 0.1
+                }
+            ],
+            "Content Accuracy": [
+                {
+                    "criterion_name": "Factual Correctness of Hardware and Physical Connections",
+                    "explanation": "Evaluates the scientific and factual validity of the components and their interconnections. Distinct from structural routing (how lines are drawn), this criterion assesses 'what connects to what.' It penalizes impossible physics or logical fallacies, such as optical beams bending without mirrors, unclosed electrical circuits, or sensors placed in factually incorrect stages of the experimental pipeline according to the source text.",
+                    "human_preference_injection": "A diagram is preferred when it depicts a scientifically complete physical process, ensuring that all matter and energy flows terminate at factually appropriate hardware rather than disappearing into a void. Omitting critical interaction endpoints constitutes a physical fallacy that breaks the factual validity of the experimental setup and must be strictly penalized.",
+                    "weight": 0.25
+                },
+                {
+                    "criterion_name": "Comprehensive Parameter and Condition Articulation",
+                    "explanation": "Assesses the diagram's informational richness and depth. A high-quality experimental setup diagram should extract and display critical operational parameters and conditions (e.g., focal lengths, specific voltages, flow rates, temperatures, laser power) directly adjacent to the relevant hardware. This transforms the diagram from a superficial overview into a highly explanatory, standalone scientific tool.",
+                    "human_preference_injection": "For this criterion, human preference strongly favors diagrams that explicitly embed specific, quantitative operational parameters and environmental conditions directly alongside the relevant hardware. Diagrams that omit these critical technical details in favor of purely structural or aesthetic overviews are penalized, as they fail to function as standalone, information-rich scientific tools.",
+                    "weight": 0.2
+                },
+                {
+                    "criterion_name": "Terminological Consistency and Nomenclature",
+                    "explanation": "Ensures that all text labels, variable names, and equipment abbreviations (e.g., 'BS1' for Beam Splitter 1, 'DAQ' for Data Acquisition) used within the visual elements strictly match the nomenclature and textual discourse of the accompanying scientific paper, preventing referential ambiguity.",
+                    "human_preference_injection": "A superior diagram explicitly incorporates the specific, detailed hardware nomenclature found in the source text rather than relying solely on generic, high-level scientific abbreviations. Providing this depth of specific textual labeling ensures a stronger, unambiguous referential alignment with the paper's complex methodological discourse.",
+                    "weight": 0.15
+                }
+            ]
+        },
+        "Aesthetics": [
+            {
+                "criterion_name": "Stylistic Coherence and Abstraction Harmony",
+                "explanation": "Evaluates the consistency of the visual language across all depicted hardware components. Whether the diagram employs realistic 3D renderings, flat 2D vector graphics, or standardized abstract symbols, the stylistic execution (e.g., shading, gradients, corner radii, and perspective) must be unified. It penalizes 'collage-like' appearances where disparate graphical styles are mixed discordantly, ensuring a professional, seamless visual presentation regardless of the chosen level of abstraction.",
+                "human_preference_injection": "Human preference favors diagrams that maintain a strictly uniform visual language by applying consistent rendering rules—such as uniform material finishes, shading techniques, and spatial perspective—across all depicted components and physical flows. Diagrams that fragment this harmony with a discordant, collage-like aesthetic, such as arbitrarily mixing flat 2D vector elements with hyper-glossy 3D renderings or disparate neon gradient glows, are strictly penalized.",
+                "weight": 0.35
+            },
+            {
+                "criterion_name": "Functional Color Coding and Contrast",
+                "explanation": "Assesses the aesthetic application of color to differentiate physical domains, hardware modules, and energy/information flows (e.g., distinct colors for optical paths, fluidic lines, and electrical circuits). The color palette should be harmonious, professional, and accessible, avoiding overly saturated or clashing fluorescent colors. Furthermore, it evaluates the contrast between foreground hardware elements and the background, ensuring that the visual emphasis naturally highlights the core experimental apparatus.",
+                "human_preference_injection": "For this criterion, human preference strongly favors harmonious, muted color palettes that clearly differentiate physical domains and flows without relying on overly saturated, glowing, or fluorescent hues. High-quality scientific diagrams achieve professional contrast through balanced tones rather than artificially bright colors that detract from a rigorous academic aesthetic.",
+                "weight": 0.3
+            },
+            {
+                "criterion_name": "Line Articulation and Path Styling",
+                "explanation": "Focuses on the graphic design quality of the topological connections (wires, beams, pipes) between experimental devices. It evaluates the aesthetic refinement of line weights, stroke styles (e.g., solid, dashed, or stylized glows for lasers), and arrowheads. High-quality execution features crisp, clean lines that visually distinguish different types of flows without introducing unnecessary decorative clutter or visual noise.",
+                "human_preference_injection": "Human preference favors crisp, uniform line weights and well-proportioned arrowheads that utilize distinct stroke styles—such as solid versus dashed lines—to clearly differentiate flows. High-quality path styling strictly avoids unnecessary decorative effects like glows or gradients, prioritizing clean, refined graphic execution that minimizes visual noise.",
+                "weight": 0.2
+            },
+            {
+                "criterion_name": "Typographic Integration and Legibility",
+                "explanation": "Measures the aesthetic treatment and visual integration of text labels, component names, and parameter values within the hardware diagram. Typography must be legible, appropriately scaled relative to the graphical elements, and utilize consistent font families and weights. It penalizes text that lacks sufficient contrast against its background or appears visually disconnected from the overall design aesthetic.",
+                "human_preference_injection": "As long as the typography remains clear, readable, and stylistically cohesive with the visual elements, minor hierarchical variations in text scale or placement should not be penalized.",
+                "weight": 0.15
+            }
+        ],
+        "Structure": {
+            "Visual Organizational Layout": [
+                {
+                    "criterion_name": "Path Routing and Directional Clarity",
+                    "explanation": "Evaluates the visual clarity of interconnecting lines (e.g., optical beams, electrical wires, fluidic channels, or data links). The routing must minimize unnecessary crossings, avoid visual tangling ('spaghetti routing'), and clearly indicate directionality using arrows or flow indicators. It accommodates various styles (e.g., orthogonal routing for electronics, angled routing for optics) provided the overall visual neatness and traceability of the paths are maintained.",
+                    "human_preference_injection": "For this criterion, human preference strongly favors diagrams that explicitly visualize the continuous routing of interconnecting paths (such as data links, control signals, or physical flows) between system components, demonstrating clear traceability across the setup. A higher-quality diagram successfully manages the visual complexity of these continuous networks, maintaining neatness and clear directionality without excessive tangling. Conversely, diagrams that oversimplify the routing by replacing continuous interconnecting lines with localized, disconnected directional indicators (e.g., isolated radiating arrows or standalone beams) are penalized. Even if these localized indicators are highly stylized or aesthetically pleasing, they fail to fulfill the core requirement of illustrating a traceable routing network between components. The criterion rewards the clear, functional execution of complex path routing over the aesthetic oversimplification of flows.",
+                    "weight": 0.2
+                },
+                {
+                    "criterion_name": "Spatial Alignment and Functional Progression",
+                    "explanation": "Assesses how well the spatial distribution of components reflects the logical or physical progression of the experiment. The layout should provide a clear reading path (e.g., left-to-right or top-to-bottom) that aligns with the primary flow of the experiment (e.g., from energy source, to sample, to detector). It should maintain a balanced spatial density, avoiding unjustified congestion or excessive empty space.",
+                    "human_preference_injection": "A superior diagram spatially aligns its elements to form a continuous, end-to-end reading path that directly mirrors the physical or operational flow of the entire system. Layouts that visually trace this dynamic functional progression across the canvas are preferred over disconnected conceptual groupings that interrupt the overarching logical sequence.",
+                    "weight": 0.15
+                },
+                {
+                    "criterion_name": "Hierarchical and Modular Partitioning",
+                    "explanation": "Focuses on the effective use of spatial clustering, bounding boxes, or distinct spacing to group related components into functional subsystems (e.g., 'Laser Excitation Module', 'Cryogenic Sample Chamber', 'Data Acquisition System'). This visual modularization reduces cognitive load and helps readers distinguish between overarching system architecture and localized component details.",
+                    "human_preference_injection": "When evaluating Hierarchical and Modular Partitioning, preference should be given to diagrams that actively group internal components into distinct functional subsystems (e.g., data acquisition, environmental controls, or detection modules) using bounding boxes or spatial clustering. Simply placing an entire, standalone experimental setup within a single large frame or bounding box does not fulfill the core intent of this criterion, as it fails to break down the internal complexity of the system. High-quality partitioning must demonstrate a true hierarchy by visually separating localized functional blocks within the overarching architecture, thereby effectively reducing the reader's cognitive load when parsing complex internal details.",
+                    "weight": 0.1
+                }
+            ],
+            "Logical Accuracy": [
+                {
+                    "criterion_name": "Topological and Sequential Fidelity",
+                    "explanation": "Measures the strict adherence of the diagram's structural connections to the actual experimental design described in the paper. It evaluates whether all components are connected in the correct sequence without hallucinated links, erroneous bypasses, or missing critical connections. This is the foundational logical skeleton of the setup.",
+                    "human_preference_injection": "A diagram demonstrates superior topological and sequential fidelity when it maps the complete, end-to-end experimental pathway—from initial excitation to final data collection—rather than over-abstracting the system to show only localized interactions. Omitting critical functional nodes breaks the foundational logical skeleton and sequence of the experimental design.",
+                    "weight": 0.25
+                },
+                {
+                    "criterion_name": "Energy, Matter, and Signal Flow Logic",
+                    "explanation": "Evaluates the scientific soundness of the directional flow depicted in the topology. It ensures that the pathways for energy (e.g., light, heat), matter (e.g., gas, liquid), and information (e.g., electronic signals) obey logical and physical constraints (e.g., optical beams splitting correctly at beam splitters, closed-loop fluidic systems returning to reservoirs, distinct separation of analog signals and digital data paths).",
+                    "human_preference_injection": "A superior diagram must depict the complete end-to-end logical progression of the experiment by explicitly including the downstream information and signal pathways (e.g., to data acquisition systems) alongside the physical energy and matter interactions. Omitting these critical data flows breaks the functional logic of the setup and renders the experimental cycle scientifically incomplete, regardless of how intuitively the physical interactions are rendered.",
+                    "weight": 0.15
+                },
+                {
+                    "criterion_name": "Structural Abstraction and Granularity",
+                    "explanation": "Assesses the diagram's ability to distill the physical setup into a core structural skeleton. It must strike a balance by including all functionally necessary nodes (e.g., specific lenses, valves, or amplifiers crucial to the methodology) while deliberately omitting irrelevant structural noise (e.g., standard mechanical mounts, generic power cables) that do not contribute to the scientific understanding of the hypothesis validation.",
+                    "human_preference_injection": "A superior diagram must retain all functionally critical nodes, such as specific measurement instruments and detectors, that are essential for understanding the complete experimental methodology. Over-abstracting the setup by omitting these key components in favor of a simplified physical interaction region severely compromises the diagram's explanatory value, demonstrating that functional completeness supersedes strict scale consistency.",
+                    "weight": 0.15
+                }
+            ]
+        }
+    }
+}
+{
+    "id": 7,
+    "class": "Illustrative Case",
+    "number": 10,
+    "filepath": "",
+    "dimension_weight": {
+        "Structure": 0.35,
+        "Content": 0.5,
+        "Aesthetics": 0.15
+    },
+    "criteria": {
+        "Structure": {
+            "Visual Organizational Layout": [
+                {
+                    "criterion_name": "Instance Modularization and Demarcation",
+                    "explanation": "Evaluates the strategic use of bounding boxes, background shading, or distinct spatial partitioning to encapsulate discrete components of the concrete example (e.g., separating 'Input Text', 'Intermediate Reasoning/Chain-of-Thought', 'API Calls', and 'Final Output'). Effective modularization prevents dense blocks of text or code from visually blending together, thereby reducing cognitive load and clarifying the distinct stages of the illustrative case.",
+                    "human_preference_injection": "Superior modularization strategically employs nested bounding boxes or spatial overlays to demarcate intermediate processes directly within a dense, concrete textual or code context. This approach effectively isolates distinct execution stages without breaking the realistic, inline structure of the raw data instance.",
+                    "weight": 0.2
+                },
+                {
+                    "criterion_name": "Clear Sequential Flow and Directionality",
+                    "explanation": "Assesses the establishment of an intuitive reading path that mirrors the chronological or procedural progression of the illustrative case. The layout must utilize clear spatial arrangements (e.g., top-to-bottom, left-to-right) and unambiguous directional indicators (arrows, numbered badges) to guide the viewer seamlessly through the execution steps, ensuring the temporal sequence of the concrete example is immediately apparent.",
+                    "human_preference_injection": "For comparative workflows, a unified flow that branches from a shared origin is superior to parallel linear paths because it explicitly maps the procedural divergence from a common starting point. This arrangement establishes a more intuitive reading path by highlighting the exact stage where execution trajectories differ.",
+                    "weight": 0.15
+                },
+                {
+                    "criterion_name": "Spatial Alignment of Iterative or Comparative Elements",
+                    "explanation": "Measures the structural harmony achieved when depicting multi-turn interactions, iterative loops, or comparative instances (e.g., contrasting a 'Baseline Model' output with a 'Proposed Model' output). Peer-level modules or repeated execution cycles should be spatially aligned (via symmetry, parallel columns, or grid structures) to facilitate direct visual comparison and convey structural consistency.",
+                    "human_preference_injection": "Structural harmony is maximized by anchoring comparative modules symmetrically around a shared central axis of common components, which facilitates more direct visual contrast than parallel repetition of identical inputs. This centralized layout reduces spatial redundancy and establishes a clearer focal point for evaluating the divergence between peer-level processes.",
+                    "weight": 0.1
+                }
+            ],
+            "Logical Accuracy": [
+                {
+                    "criterion_name": "Fidelity of Execution Trajectory and Dependencies",
+                    "explanation": "Evaluates how accurately the diagram's topological structure maps the actual reasoning logic, algorithmic execution, or system workflow described in the paper. The structural connections must strictly adhere to the true dependencies of the concrete example, correctly representing complex logical routing such as conditional branches, nested reasoning steps, or feedback loops, without introducing structural hallucinations or omitting critical transitional steps.",
+                    "human_preference_injection": "Superior fidelity requires explicitly mapping the step-by-step structural dependencies and transitional states of an execution trajectory, rather than abstracting the workflow into a generic, high-level system loop. This ensures that complex logical routing—such as specific failure points and sequential actions—is accurately represented without omitting critical operational steps.",
+                    "weight": 0.3
+                },
+                {
+                    "criterion_name": "Structural Distillation of Concrete Data",
+                    "explanation": "Assesses the diagram's ability to construct a lucid, abstract logical skeleton out of verbose, real-world data instances. It must effectively balance detail mining with structural abstraction—extracting and highlighting the pivotal variables, trigger words, or core mechanisms within the text/code blocks—so that the overarching logical framework remains highly visible and is not obfuscated by detail overload or redundant information.",
+                    "human_preference_injection": "Effective structural distillation must balance abstraction with the preservation of essential raw data context, organizing critical operational details rather than over-abstracting them into generic summaries. A superior diagram highlights pivotal elements within the actual data medium instead of replacing the concrete instance entirely, ensuring the core mechanism remains visible and grounded.",
+                    "weight": 0.25
+                }
+            ]
+        },
+        "Content": {
+            "Visual Element Representation": [
+                {
+                    "criterion_name": "Domain-Specific Formatting of Data Instances",
+                    "explanation": "Evaluates whether the concrete data instances are presented using appropriate, domain-specific visual conventions that convey their semantic nature. For example, code snippets should utilize monospace typography and syntax highlighting; natural language dialogues should use distinct speaker containers (e.g., chat bubbles); and structured data (like JSON or XML) should feature proper indentation and bracket alignment. This ensures the core medium is instantly recognizable and intuitively understood.",
+                    "human_preference_injection": "Professional presentation conventions are encouraged, while repetitive content caused by generative artifacts is penalized.",
+                    "weight": 0.15
+                },
+                {
+                    "criterion_name": "High-Fidelity Typographic Rendering",
+                    "explanation": "Assesses the clarity, crispness, and legibility of the text, which is the primary vehicle of information in illustrative cases. The text must be free from generative artifacts, blurring, overlapping, or truncation. Given the high density of textual information (e.g., prompts, outputs, parameters), the typography must be rendered flawlessly to prevent any loss of critical data.",
+                    "human_preference_injection": "High-fidelity typography strictly requires the absence of generative artifacts, prioritizing the flawless structural integrity of text characters over high visual contrast. Diagrams must avoid confusing typographic errors such as arbitrary spacing, truncation, or unnatural line breaks within single words or code tokens.",
+                    "weight": 0.15
+                },
+                {
+                    "criterion_name": "Visual Differentiation of Annotations and Data",
+                    "explanation": "Measures the effectiveness of the visual distinction between the raw data instance (the 'case' itself) and the meta-information (the author's explanatory annotations, step labels, or highlight markers). The diagram must use clear visual cues (such as distinct iconography, bounding boxes, or specific text styles) to prevent the reader from confusing the explanatory overlay with the actual input/output data.",
+                    "human_preference_injection": "Effective visual differentiation is achieved by using semantically distinct cues—such as specific iconography or specialized containers—to clearly separate raw data instances from explanatory meta-information. Relying solely on uniform color-coded blocks homogenizes the content, whereas varied graphical treatments ensure the actual input/output data is never confused with the author's annotations.",
+                    "weight": 0.1
+                }
+            ],
+            "Content Accuracy": [
+                {
+                    "criterion_name": "Fidelity and Relevance of the Concrete Example",
+                    "explanation": "Evaluates whether the selected data instance is realistic, factually accurate, and highly relevant to the paper's core thesis. The example must not be a generic or hallucinated placeholder; it must effectively and specifically demonstrate the targeted algorithm logic, model reasoning capability, or system flaw as claimed in the research.",
+                    "human_preference_injection": "A superior diagram utilizes a specific, realistic data instance grounded in the research domain to explicitly demonstrate the targeted algorithmic logic or system flaws. Generic, abstract placeholders are penalized because they merely state concepts without providing the tangible, factual proof required to validate the paper's claims.",
+                    "weight": 0.2
+                },
+                {
+                    "criterion_name": "Logical Rigor of Execution Traces",
+                    "explanation": "Assesses the strict logical correspondence between the input data, the intermediate processing steps, and the final output within the illustrative case. The transformation of the data must perfectly align with the mechanistic rules or algorithmic steps defined in the paper, containing no logical gaps, erroneous deductions, or factual contradictions in the reasoning chain.",
+                    "human_preference_injection": "Evaluating the logical rigor of execution traces requires the diagram to depict a concrete, step-by-step instantiation of data transformations rather than abstract workflow loops. This explicit detailing is essential to verify the strict logical correspondence between specific inputs, intermediate processing actions, and resulting outputs.",
+                    "weight": 0.2
+                },
+                {
+                    "criterion_name": "Optimal Informational Granularity and Signal-to-Noise Ratio",
+                    "explanation": "Measures the diagram's ability to extract and highlight high-value details (e.g., the exact line of code causing a bug, or the specific trigger word in a prompt) while effectively filtering out irrelevant boilerplate code, excessive text, or trivial parameters. The example must provide sufficient depth to be explanatory without burying the core scientific value under informational noise.",
+                    "human_preference_injection": "Optimal informational granularity requires preserving essential contextual details—such as raw input structures or environmental setups—that demonstrate the true complexity of the task, rather than oversimplifying the process into abstract summaries. A high signal-to-noise ratio is achieved not by stripping away authentic operational context, but by retaining the necessary depth to make the scientific demonstration meaningful and realistic.",
+                    "weight": 0.1
+                },
+                {
+                    "criterion_name": "Terminological and Notation Consistency",
+                    "explanation": "Ensures that all variables, API endpoints, model designations, and technical terminology used within the concrete example and its annotations strictly match the nomenclature established in the main text of the paper. This prevents referential ambiguity and maintains academic rigor.",
+                    "human_preference_injection": "Superior terminological consistency is achieved by incorporating exact dataset or benchmark identifiers that directly map the visual example to specific experimental instances discussed in the text. This precise nomenclature enhances academic rigor and prevents referential ambiguity far better than relying on generic case labels.",
+                    "weight": 0.1
+                }
+            ]
+        },
+        "Aesthetics": [
+            {
+                "criterion_name": "Typographic Legibility and Formatting",
+                "explanation": "Evaluates the aesthetic treatment of text, which is the core medium of illustrative cases. This includes the appropriate selection of font families (e.g., crisp monospace fonts for code snippets, clean sans-serifs for dialogue), optimal line height, and appropriate font weights. The typography must ensure high visual contrast against backgrounds and avoid visual fatigue, presenting dense textual data in a polished, highly readable, and professionally typeset manner.",
+                "human_preference_injection": "Superior typographic formatting strategically employs varying font weights to establish a clear visual hierarchy within text blocks. This purposeful typographic contrast breaks visual monotony and enhances readability, allowing viewers to instantly scan and identify key comparative terms without cognitive fatigue.",
+                "weight": 0.4
+            },
+            {
+                "criterion_name": "Functional Color Coding and Syntax Highlighting",
+                "explanation": "Assesses the stylistic application of color palettes used to differentiate entities (e.g., User vs. System prompts) or to highlight specific textual elements (e.g., syntax highlighting for code, API parameters, or error states). The color scheme must be visually harmonious, adhering to professional scientific publishing standards. It should utilize accessible, well-contrasted tones rather than jarring, highly saturated, or fluorescent colors, ensuring that aesthetic highlighting enhances rather than overwhelms the text.",
+                "human_preference_injection": "Superior functional color coding employs subtle, targeted text or border coloring to differentiate specific syntax and intermediate states, rather than relying on large, generic background fills. This restrained approach aligns with professional academic standards by ensuring that color enhances readability without overwhelming the core textual data.",
+                "weight": 0.35
+            },
+            {
+                "criterion_name": "Container Styling and Visual Consistency",
+                "explanation": "Focuses on the graphic design quality of the visual boundaries housing the data instances, such as chat bubbles, terminal mockups, or code blocks. The diagram must exhibit a coherent visual language with standardized graphical properties (e.g., consistent stroke weights, uniform corner radii, and subtle, non-distracting background shading). It must strictly avoid visual noise, such as unnecessary 3D effects, heavy drop shadows, or a collage-like mixing of disparate UI styles that detract from the academic rigor of the presentation.",
+                "human_preference_injection": "Effective container styling relies on authentic, context-appropriate boundaries (e.g., terminal or code editor mockups) rather than generic shapes paired with overly illustrative, non-academic clip-art. This approach maintains a coherent, rigorous visual language and prevents the visual noise caused by mixing disparate graphical styles.",
+                "weight": 0.25
+            }
+        ]
+    }
+}
+{
+    "id": 8,
+    "class": "Algorithmic Framework",
+    "number": 10,
+    "filepath": "",
+    "dimension_weight": {
+        "Structure": 0.5,
+        "Aesthetics": 0.15,
+        "Content": 0.35
+    },
+    "criteria": {
+        "Content": {
+            "Visual Element Representation": [
+                {
+                    "criterion_name": "Semantic Clarity of Algorithmic Components",
+                    "explanation": "Evaluates whether the graphical shapes, icons, and line types intuitively and accurately represent their specific algorithmic functions. For example, distinct visual motifs should be used for data storage, processing modules (e.g., convolutional layers vs. fully connected layers), and flow types (e.g., solid lines for data flow, dashed lines for control/gradient flow), avoiding generic or ambiguous shapes that fail to convey computational roles.",
+                    "human_preference_injection": "Highly reward diagrams that maximize informational richness through precise visual motifs. Strongly penalize generic grids or oversimplified abstracted symbols that fail to intuitively convey exact computational logic.",
+                    "weight": 0.15
+                },
+                {
+                    "criterion_name": "Typographic and Symbolic Legibility",
+                    "explanation": "Assesses the rendering quality and crispness of text, mathematical formulas, and minute symbols. Given the reliance of algorithmic frameworks on precise notation (e.g., subscripts, superscripts, Greek letters, tensor dimensions), all typographic elements must be high-resolution, vectorized, and entirely free from generative artifacts, blurring, or overlapping that could obscure mathematical meaning.",
+                    "human_preference_injection": "Highly reward diagrams where all text and mathematical symbols are rendered with vector-quality crispness and high contrast. Strongly penalize blurred, low-resolution, or unreadable typographic elements.",
+                    "weight": 0.15
+                },
+                {
+                    "criterion_name": "Legend and Notation Completeness",
+                    "explanation": "Measures the adequacy of explanatory legends for decoding the diagram's visual language. It checks whether custom symbols, non-standard abbreviations, and specific color encodings (e.g., colors denoting different processing stages, or distinguishing between frozen and trainable network parameters) are explicitly defined, ensuring the diagram is self-explanatory.",
+                    "human_preference_injection": "Highly reward diagrams that achieve self-explanatory clarity through comprehensive, in-situ text labels, explicit module titles, and integrated annotations. Penalize diagrams that leave custom symbols or color encodings undefined, even if formal legend boxes are omitted.",
+                    "weight": 0.1
+                }
+            ],
+            "Content Accuracy": [
+                {
+                    "criterion_name": "Algorithmic and Mathematical Correctness",
+                    "explanation": "Evaluates the factual accuracy of the core algorithmic information presented. This includes verifying that mathematical formulas, loss functions, optimization objectives, and standard algorithmic module names are correct, free from logical fallacies, and do not contradict established computer science principles or the specific claims of the paper.",
+                    "human_preference_injection": "Strongly prioritize diagrams that comprehensively articulate the complete logical workflow and its sub-modules. Penalize structurally oversimplified representations that achieve superficial accuracy merely by evading necessary algorithmic complexity.",
+                    "weight": 0.2
+                },
+                {
+                    "criterion_name": "Data Flow and Dimensional Consistency",
+                    "explanation": "Assesses the logical coherence of the information passed between modules. It specifically checks whether data transformations are accurately labeled and logically sound, such as ensuring that tensor shapes, matrix dimensions, and data types correctly match between the outputs of one algorithmic stage and the inputs of the subsequent stage without informational discontinuities.",
+                    "human_preference_injection": "Highly reward diagrams that explicitly map the step-by-step transformation of data and clearly label specific inputs, intermediate representations, and outputs at each stage. Penalize diagrams that merely present high-level conceptual abstractions without ensuring a continuous, logically sound flow of information.",
+                    "weight": 0.15
+                },
+                {
+                    "criterion_name": "Informational Depth of Core Mechanisms",
+                    "explanation": "Measures the diagram's capacity to extract and display high-value algorithmic details rather than relying on superficial 'black boxes'. It rewards the inclusion of critical micro-mechanisms (e.g., specific activation functions, key hyperparameters, attention mechanisms, or conditional branching logic) that provide deep explanatory power regarding how the algorithm actually functions.",
+                    "human_preference_injection": "Highly reward diagrams that visually articulate the underlying theoretical mechanism and conceptual cause-and-effect driving the algorithm. Penalize diagrams that merely map a superficial step-by-step pipeline without illustrating the specific mechanistic solution.",
+                    "weight": 0.15
+                },
+                {
+                    "criterion_name": "Terminological Consistency",
+                    "explanation": "Checks whether the variable nomenclatures, module acronyms, and technical terminology used within the diagram's text labels strictly align with the textual discourse of the accompanying paper, preventing any ambiguity caused by using multiple terms for the same algorithmic concept.",
+                    "human_preference_injection": "Strongly prefer diagrams that strictly adhere to the exact vocabulary, examples, and data points designated by the accompanying text. Penalize diagrams that borrow valid but mismatched terms from elsewhere in the paper, causing terminological inconsistency.",
+                    "weight": 0.1
+                }
+            ]
+        },
+        "Aesthetics": [
+            {
+                "criterion_name": "Cohesive Visual Language and Stylistic Uniformity",
+                "explanation": "Evaluates the consistency of graphic design properties across all modules, nodes, and connections within the algorithmic framework. A high-quality diagram maintains a unified stylistic vocabulary—such as consistent stroke weights, uniform corner radii for bounding boxes, standardized arrowhead designs, and a coherent approach to dimensionality (e.g., seamlessly integrating 2D flat design or maintaining a consistent isometric 3D style). It penalizes fragmented, 'collage-like' appearances where disparate visual styles are jarringly mixed, ensuring the abstract system looks like a single, integrated architecture.",
+                "human_preference_injection": "Highly reward diagrams that orchestrate structural complexity through a rigorously uniform visual language, including synchronized color palettes, consistent typography, and standardized geometric bounding boxes. Strongly penalize fragmented or uncoordinated designs that fail to visually unify intricate, multi-layered frameworks.",
+                "weight": 0.35
+            },
+            {
+                "criterion_name": "Functional and Harmonious Color Palette",
+                "explanation": "Assesses the selection and application of color to enhance both visual appeal and functional clarity. Colors should be harmonious, professional, and aligned with academic publishing standards. Crucially, color must be used deliberately to visually distinguish different algorithmic stages, group related sub-modules, or highlight primary data flows, rather than being applied arbitrarily. The criterion also strictly evaluates color contrast, ensuring that foreground elements (especially text and mathematical symbols) remain highly legible against colored backgrounds or bounding boxes.",
+                "human_preference_injection": "Highly reward diagrams that deliberately apply harmonious colors to intuitively reinforce the algorithmic narrative and clarify qualitative transitions. Penalize arbitrary or distracting color choices that fail to functionally distinguish algorithmic stages or decision outcomes.",
+                "weight": 0.3
+            },
+            {
+                "criterion_name": "Typographic Legibility and Hierarchy",
+                "explanation": "Focuses on the aesthetic execution of text within the diagram. It evaluates whether the chosen fonts are crisp, professional, and appropriately scaled to prevent visual strain. Furthermore, it assesses the deliberate use of typographic properties (such as font weight, size, italics, or monospace styles) to establish a clear visual hierarchy, elegantly differentiating overarching module titles from granular details like tensor dimensions, variable names, or specific algorithmic operations.",
+                "human_preference_injection": "Highly reward diagrams that employ a multi-layered typographic hierarchy to clearly differentiate distinct classes of information and provide deep structural clarity. Penalize diagrams that use a flat or confusing typographic styling that fails to categorize text elements effectively.",
+                "weight": 0.2
+            },
+            {
+                "criterion_name": "Minimalist Polish and Absence of Visual Noise",
+                "explanation": "Measures the overall refinement and cleanliness of the diagram's presentation layer. High-scoring diagrams employ a minimalist aesthetic that strips away non-functional decorative elements. It penalizes the inclusion of visual noise, such as exaggerated drop shadows, gratuitous glowing effects, overly complex background textures, or distracting gradients that do not contribute to the understanding of the algorithm. The aesthetic polish should elevate the academic rigor of the framework, keeping the viewer's focus entirely on the algorithmic logic.",
+                "human_preference_injection": "Highly reward diagrams that maintain a strictly flat, professionally clean aesthetic regardless of their structural density. Heavily penalize non-functional decorations, such as gradients, drop shadows, or overly complex backgrounds, that introduce visual noise.",
+                "weight": 0.15
+            }
+        ],
+        "Structure": {
+            "Visual Organizational Layout": [
+                {
+                    "criterion_name": "Modular Partitioning and Boundary Delineation",
+                    "explanation": "Evaluates the use of spatial clustering, bounding boxes, and visual grouping to clearly separate distinct algorithmic modules (e.g., data preprocessing, core network architecture, loss computation). Effective partitioning reduces cognitive load by visually isolating functional subsystems while maintaining their context within the broader framework.",
+                    "human_preference_injection": "Highly reward diagrams that utilize explicit visual boundaries and hierarchical nesting to clearly partition complex algorithmic pipelines into distinct modules. Heavily penalize overly simplistic layouts that fail to effectively delineate sequential steps or demonstrate inferior modularity.",
+                    "weight": 0.15
+                },
+                {
+                    "criterion_name": "Topological Routing of Data and Control Flows",
+                    "explanation": "Assesses the visual clarity of the pathways connecting different algorithmic components. High-quality routing features clear arrow directionality, minimizes unnecessary line crossings, and uses orthogonal or smoothly curved lines to depict complex data pipelines, feedback loops, or parallel processing streams without creating visual 'spaghetti'.",
+                    "human_preference_injection": "Highly reward diagrams that feature clear, well-organized routing of data and control flows in complex workflows. Penalize diagrams with unnecessary line crossings, arbitrary pathways, or visually confusing connections.",
+                    "weight": 0.15
+                },
+                {
+                    "criterion_name": "Hierarchical and Multi-Stage Spatial Arrangement",
+                    "explanation": "Examines how well the layout visually distinguishes between different levels of the algorithm (e.g., macro-architecture vs. micro-operations) or distinct temporal stages (e.g., training phase vs. inference phase). The spatial arrangement should intuitively guide the reader through the overarching system before diving into localized details.",
+                    "human_preference_injection": "Highly reward diagrams that explicitly organize the algorithmic workflow into distinct, sequential spatial tiers to clearly delineate temporal phases or structural levels. Penalize layouts that merely present flat, single-stage conceptual comparisons without necessary spatial hierarchy.",
+                    "weight": 0.1
+                },
+                {
+                    "criterion_name": "Spatial Equilibrium and Cognitive Load Distribution",
+                    "explanation": "Evaluates the overall balance and proportion of the diagram across the canvas. It checks whether complex, dense algorithmic modules are given adequate spatial breathing room and whether the layout avoids arbitrary congestion or unjustified empty spaces, ensuring a harmonious visual narrative.",
+                    "human_preference_injection": "Highly reward diagrams that achieve clear, structured spatial equilibrium to effectively manage the cognitive load of high-density information. Heavily penalize poor space management, severe congestion, or artificial balance resulting merely from sparseness.",
+                    "weight": 0.1
+                }
+            ],
+            "Logical Accuracy": [
+                {
+                    "criterion_name": "Architectural Fidelity and Component Completeness",
+                    "explanation": "Measures the strict adherence of the diagram's structural skeleton to the algorithm described in the text. It penalizes the omission of critical architectural components or the hallucination of non-existent modules, ensuring the visual framework is a complete and faithful representation of the proposed system.",
+                    "human_preference_injection": "Strongly prioritize diagrams that explicitly and comprehensively delineate the complete algorithmic architecture and its core functional modules. Penalize abstract, high-level conceptual illustrations that omit critical architectural components.",
+                    "weight": 0.2
+                },
+                {
+                    "criterion_name": "Execution Logic and Dependency Mapping",
+                    "explanation": "Assesses the precise logical correctness of the inter-module connections. It ensures that data dependencies, control flows, conditional branches, and iterative feedback loops are topologically mapped exactly as the algorithm dictates, without conflating independent processes or misrepresenting causal relationships.",
+                    "human_preference_injection": "Highly reward diagrams that deliver a rigorous, exhaustive topological mapping of the complete operational pipeline and its specific data dependencies. Strongly penalize simplified conceptual representations that omit critical step-by-step execution logic or structural relationships.",
+                    "weight": 0.2
+                },
+                {
+                    "criterion_name": "Structural Abstraction and Granularity Balance",
+                    "explanation": "Evaluates the diagram's ability to distill complex algorithmic text into a lucid core skeleton while retaining high-value mechanistic details (e.g., specific tensor shapes, key mathematical transformations, or gating mechanisms). It penalizes both overly superficial overviews that lack explanatory depth and mechanically enumerated, cluttered structures that obscure the core algorithmic logic.",
+                    "human_preference_injection": "Strongly prioritize diagrams that explicitly depict concrete algorithmic mechanisms over superficial conceptual metaphors. Penalize diagrams that over-abstract the system into a \"black box\" without strictly retaining the specific operational details necessary for explanation.",
+                    "weight": 0.1
+                }
+            ]
+        }
+    }
+}
+{
+    "id": 9,
+    "class": "Computer System Architecture",
+    "number": 10,
+    "filepath": "",
+    "dimension_weight": {
+        "Structure": 0.5,
+        "Aesthetics": 0.15,
+        "Content": 0.35
+    },
+    "criteria": {
+        "Structure": {
+            "Visual Organizational Layout": [
+                {
+                    "criterion_name": "Explicit Tiered Partitioning and Boundary Demarcation",
+                    "explanation": "Evaluates the diagram's ability to visually separate distinct logical or privilege layers (e.g., Application Layer, OS/Kernel Space, Hardware/Device Layer). The layout should utilize clear bounding boxes, distinct spatial planes, or horizontal/vertical stratification to demarcate system boundaries and execution environments, allowing readers to instantly grasp the overarching architectural framework.",
+                    "human_preference_injection": "Higher scores should be assigned to diagrams that use explicit bounding boxes and clear spatial stratification to mark the full scope of each logical execution environment across architectural tiers, rather than broad monolithic background regions. Diagrams with clearly drawn perimeter boundaries are preferred because they make complex multi-component system scopes immediately and accurately understandable.",
+                    "weight": 0.15
+                },
+                {
+                    "criterion_name": "Modular Grouping and Hierarchical Nesting",
+                    "explanation": "Assesses the spatial organization of sub-components within the broader architecture. Related functional units (e.g., ALUs and registers within a CPU core, or specific modules within a software framework) must be logically clustered and visually nested. This reduces cognitive load by presenting a clear parent-child visual hierarchy rather than a flat, disorganized scattering of components.",
+                    "human_preference_injection": "Higher scores should be assigned to diagrams that explicitly encapsulate related sub-components inside distinct nested bounding boxes to form a strict parent-child hierarchy. Diagrams that rely on intersecting partition lines or loosely scattered modules should be rated lower because they weaken functional cohesion and structural clarity.",
+                    "weight": 0.15
+                },
+                {
+                    "criterion_name": "Topological Routing of System Interfaces",
+                    "explanation": "Examines the visual clarity of the lines and arrows representing buses, APIs, networks, and communication channels. A high-quality layout minimizes unnecessary line crossings, utilizes orthogonal or smoothly curved routing appropriate for schematics, and clearly indicates directionality, ensuring that complex interconnects do not devolve into visual clutter or 'spaghetti' routing.",
+                    "human_preference_injection": "Higher scores should be assigned to diagrams that clearly route necessary cross-boundary interactions and conditional control flows, even when the interconnects are complex, instead of replacing them with overly simplified linear paths. Diagrams should not be rewarded for looking cleaner if they achieve that cleanliness by omitting essential connections.",
+                    "weight": 0.15
+                }
+            ],
+            "Logical Accuracy": [
+                {
+                    "criterion_name": "Architectural Dependency and Stratification Fidelity",
+                    "explanation": "Rigorously verifies that the topological stacking and dependencies depicted align with established computer science principles and the specific claims of the paper. For instance, hardware drivers must logically interface between the OS and physical devices, and privilege boundaries (like user vs. kernel space) must not be structurally bypassed or inverted unless explicitly proposed as a novel mechanism in the research.",
+                    "human_preference_injection": "Higher scores should be assigned to diagrams that depict the research-specific structural dependencies and hierarchical stratification exactly, rather than substituting generic simplified layer stacks. Diagrams should be penalized when they omit or blur critical structural boundaries required by the paper's technical claims.",
+                    "weight": 0.2
+                },
+                {
+                    "criterion_name": "Data and Control Flow Integrity",
+                    "explanation": "Evaluates the correctness of the routing paths representing data movement and control signals across heterogeneous components. The structural connections must accurately reflect the system's operational logic (e.g., correctly depicting Direct Memory Access (DMA) bypassing the CPU, or accurate feedback loops in a cache coherence protocol) without introducing structural hallucinations or impossible pathways.",
+                    "human_preference_injection": "Higher scores should be assigned to diagrams that represent state-based operational logic and valid control/data paths, rather than reducing complex control mechanisms to generic flow arrows. Diagrams should be penalized for any connection that implies an impossible or unsupported pathway.",
+                    "weight": 0.2
+                },
+                {
+                    "criterion_name": "Abstraction Adequacy and Core Mechanism Highlighting",
+                    "explanation": "Assesses whether the diagram extracts and structures the appropriate level of detail from the text. It should structurally emphasize the novel architectural contributions or specific micro-mechanisms proposed in the paper, while effectively abstracting standard, peripheral components. It penalizes diagrams that either suffer from detail overload (obscuring the core innovation) or insufficient granularity (failing to structurally represent the paper's actual technical depth).",
+                    "human_preference_injection": "Higher scores should be assigned to diagrams that explicitly visualize the paper's novel micro-mechanisms instead of collapsing them into generic functional blocks. The preferred abstraction preserves enough mechanism-level detail to reflect the paper's actual technical depth without unnecessary clutter.",
+                    "weight": 0.15
+                }
+            ]
+        },
+        "Content": {
+            "Visual Element Representation": [
+                {
+                    "criterion_name": "Hardware and Software Motif Semantics",
+                    "explanation": "Evaluates the intuitive and distinct graphical representation of heterogeneous system components. Hardware elements (e.g., CPUs, GPUs, memory banks, storage drives) and software entities (e.g., OS kernels, databases, user applications) must utilize distinct, recognizable shapes or icons that clearly convey their specific functional nature without extraneous ornamentation.",
+                    "human_preference_injection": "Higher scores should be assigned to diagrams that use precise visual encodings to classify heterogeneous hardware and software components by functional role. Generic decorative icons should be rated lower when they obscure technical semantics or introduce superficial metaphors unrelated to the architecture.",
+                    "weight": 0.15
+                },
+                {
+                    "criterion_name": "Signal and Interface Visual Encoding",
+                    "explanation": "Assesses the visual differentiation of communication pathways. Data buses, control signals, interrupts, and power lines must be distinctly encoded using varied line styles (e.g., solid vs. dashed), weights, or specific arrowhead typologies to visually separate high-bandwidth data flows from discrete control logic.",
+                    "human_preference_injection": "Higher scores should be assigned to diagrams that use varied line styles, weights, or arrow types to explicitly distinguish access permissions, communication boundaries, and control logic, rather than relying only on conventional arrows. This preference rewards interface encodings that make system interactions semantically precise.",
+                    "weight": 0.15
+                },
+                {
+                    "criterion_name": "Legend and Privilege Level Demarcation",
+                    "explanation": "Measures the presence and clarity of legends explaining visual encodings, particularly those used to denote system boundaries, privilege levels (e.g., User Space vs. Kernel Space, Trusted Execution Environments), or hardware vendor distinctions. Color schemes or shading used for these semantic groupings must be explicitly defined.",
+                    "human_preference_injection": "Higher scores should be assigned to diagrams that include an explicit legend defining colors or shading used for component origins, privilege levels, or other semantic groupings. Diagrams using color-coded groupings without a clear legend should be penalized because they obscure critical system demarcations.",
+                    "weight": 0.1
+                },
+                {
+                    "criterion_name": "Typographic and Micro-Rendering Clarity",
+                    "explanation": "Evaluates the legibility and crispness of discrete text labels, acronyms, and micro-structures. Given the high density of technical abbreviations in system diagrams, text must be rendered sharply without overlapping, blurring, or AI-generated typographical artifacts, ensuring every module name and interface label is perfectly readable.",
+                    "human_preference_injection": "Higher scores should be assigned to diagrams that keep labels horizontally oriented, uncompressed, and readable within or near their associated shapes. Rotated, vertically stacked, or tightly squeezed text should be rated lower because it reduces at-a-glance legibility.",
+                    "weight": 0.05
+                }
+            ],
+            "Content Accuracy": [
+                {
+                    "criterion_name": "Component-to-Tier Mapping Accuracy",
+                    "explanation": "Critically evaluates the factual correctness of placing specific components within their appropriate logical or privilege tiers. For example, device drivers must be accurately situated within the OS/kernel layer, user applications in user space, and physical controllers in the hardware layer, strictly adhering to computer science principles and the source text.",
+                    "human_preference_injection": "Higher scores should be assigned to diagrams that populate each architectural tier with the exact, functionally distinct components specified by the research instead of generic placeholders. This preference ensures that every entity accurately reflects its proper architectural layer and operational target.",
+                    "weight": 0.2
+                },
+                {
+                    "criterion_name": "Terminological and Nomenclature Precision",
+                    "explanation": "Assesses the exact and unambiguous use of standard computer architecture terminology, acronyms, and variable names (e.g., PCIe, DMA, MMU, API, Syscall). The nomenclature must be factually accurate, free of misspellings, and strictly consistent with the textual discourse of the accompanying scientific paper.",
+                    "human_preference_injection": "Higher scores should be assigned to diagrams that use the exact specialized terminology, acronyms, and novel mechanism names from the source text. Generic architecture labels or inconsistent nomenclature should be rated lower because they fail to match the paper's technical discourse.",
+                    "weight": 0.15
+                },
+                {
+                    "criterion_name": "Interaction Pathway Fidelity",
+                    "explanation": "Evaluates the factual and logical correctness of the connections between components. It ensures that depicted data routing, API calls, and hardware interrupts do not violate system architecture rules (e.g., depicting a direct, unmediated data transfer from a user application to physical memory without bypassing mechanisms like RDMA, if not explicitly stated in the text).",
+                    "human_preference_injection": "Higher scores should be assigned to diagrams that explicitly show the constraints, permissions, and access states governing each interaction pathway rather than using only abstract directional arrows. A diagram is preferred when its connections enforce the exact logical routing boundaries stated by the technical claims.",
+                    "weight": 0.1
+                },
+                {
+                    "criterion_name": "System Parameter and Detail Richness",
+                    "explanation": "Rewards the accurate extraction and inclusion of high-value, fine-grained technical parameters that enhance the diagram's explanatory depth. This includes integrating specific bus bandwidths, cache sizes, protocol versions, or clock speeds mentioned in the text, provided they do not introduce informational noise.",
+                    "human_preference_injection": "Higher scores should be assigned to diagrams that include fine-grained technical parameters and specific operational mechanisms from the text when they clarify the system. Purely high-level overviews should be rated lower if they omit details needed to explain the underlying mechanics.",
+                    "weight": 0.1
+                }
+            ]
+        },
+        "Aesthetics": [
+            {
+                "criterion_name": "Functional Color Palette and Layer Differentiation",
+                "explanation": "Evaluates the strategic use of color to visually distinguish distinct logical tiers (e.g., hardware, OS kernel, user applications) and functional modules. The color scheme should be harmonious, professional, and accessible, utilizing variations in hue or opacity to clearly demarcate system boundaries and component groupings without relying on overly saturated or clashing colors.",
+                "human_preference_injection": "Higher scores should be assigned to diagrams that use a semantically driven, professional color palette, with distinct hues mapped to specific functional pathways, logical tiers, or operational states. Arbitrary or purely decorative color choices should be rated lower because they do not clarify the architecture.",
+                "weight": 0.35
+            },
+            {
+                "criterion_name": "Typographic Clarity and Contrast",
+                "explanation": "Assesses the legibility, scaling, and visual hierarchy of text within the diagram. Given the high density of technical labels, API names, and system parameters, typography must employ appropriate font weights and sizes to differentiate between overarching layer titles and granular component details. Text must maintain high contrast against background colors to ensure effortless readability.",
+                "human_preference_injection": "Higher scores should be assigned to diagrams that keep all text contained within its intended shapes or label areas while maintaining strong contrast against every background. Text overflow, low contrast, or background colors that reduce readability should be penalized.",
+                "weight": 0.25
+            },
+            {
+                "criterion_name": "Stylistic Consistency of Technical Elements",
+                "explanation": "Measures the uniformity of the graphical language applied to geometric shapes, bounding boxes, and connecting lines. A high-quality architecture diagram must maintain consistent stroke weights, corner radii, and arrow styles (e.g., standardizing dashed lines for control signals and solid lines for data paths). It should avoid jarring stylistic mixing, such as combining flat 2D software boxes with highly rendered 3D hardware icons, unless executed with deliberate and seamless integration.",
+                "human_preference_injection": "Higher scores should be assigned to diagrams that apply one consistent dimensional style, such as flat 2D geometry, across all technical components. Mixing incompatible visual styles should be rated lower unless the integration is deliberate, seamless, and does not disrupt the diagram's cohesion.",
+                "weight": 0.25
+            },
+            {
+                "criterion_name": "Visual Restraint and Professional Polish",
+                "explanation": "Evaluates the diagram's adherence to academic and engineering design standards by avoiding unnecessary visual noise. The aesthetic execution should be clean and distilled, eschewing superficial decorations like exaggerated drop shadows, gratuitous gradients, or complex background textures that do not serve a functional purpose and might distract from the core technical architecture.",
+                "human_preference_injection": "Higher scores should be assigned to diagrams that use restrained, polished, flat 2D visuals and avoid non-functional 3D effects, gradients, and drop shadows. Decorative effects should be penalized when they add visual noise or distract from the core technical architecture.",
+                "weight": 0.15
+            }
+        ]
+    }
+}
+{
+    "id": 10,
+    "class": "Conceptual Framework",
+    "number": 10,
+    "filepath": "",
+    "dimension_weight": {
+        "Structure": 0.52,
+        "Aesthetics": 0.15,
+        "Content": 0.33
+    },
+    "criteria": {
+        "Content": {
+            "Visual Element Representation": [
+                {
+                    "criterion_name": "Semantic Clarity of Conceptual Elements",
+                    "explanation": "Evaluates whether the abstract shapes, icons, and graphical motifs used to represent theoretical constructs, technological modules, or operational mechanisms intuitively convey their intended meaning. The elements must be highly distilled, free from unnecessary ornamentation, and devoid of generative morphological distortions that could cause cognitive ambiguity.",
+                    "human_preference_injection": "Superior semantic clarity is achieved when graphical motifs employ precise visual metaphors that intuitively capture the specific nuances of the theoretical constructs they represent, rather than relying on generic, standardized placeholders. This ensures that the chosen icons actively communicate the unique conceptual narrative rather than merely serving as abstract, interchangeable labels.",
+                    "weight": 0.15
+                },
+                {
+                    "criterion_name": "Typographic Legibility and Crispness",
+                    "explanation": "Assesses the rendering quality of textual elements. Because conceptual frameworks are inherently text-heavy—relying on labels to define abstract categories and workflows—all text and alphanumeric data must be rendered in crisp, high-resolution typography, completely free from generative blurring, overlapping, or garbled characters.",
+                    "human_preference_injection": "Superior typographic legibility is achieved by rendering text in crisp, high-resolution fonts and ensuring stark contrast against underlying elements.",
+                    "weight": 0.15
+                },
+                {
+                    "criterion_name": "Legend and Visual Encoding Completeness",
+                    "explanation": "Measures the adequacy of explanatory legends. Conceptual frameworks frequently utilize specific color schemes, border styles, or shape typologies to differentiate hierarchical levels, parallel classifications, or distinct research domains. Clear, appropriately positioned legends must be provided to ensure readers can accurately decode these visual encodings.",
+                    "human_preference_injection": "Superior visual encoding completeness is achieved by explicitly defining structural motifs and conceptual categories through integrated textual keys or formal legends, rather than relying on implicit color differences. This explicit documentation ensures readers can accurately decode the framework's visual language without ambiguity.",
+                    "weight": 0.1
+                }
+            ],
+            "Content Accuracy": [
+                {
+                    "criterion_name": "Terminological Precision and Consistency",
+                    "explanation": "Evaluates the exactitude of the language used within the diagram. The nomenclature, abbreviations, and variable names labeling the architectural blocks and classification systems must strictly match the established scientific terminology and the specific textual discourse of the source paper, avoiding any ambiguity or inconsistency.",
+                    "human_preference_injection": "Superior terminological precision is achieved by labeling architectural blocks and mechanisms with the paper's exact formal conceptual vocabulary rather than relying on generic descriptors or simplified action verbs. This ensures the diagram's nomenclature strictly reflects the unique theoretical discourse and specific taxonomies established in the source text.",
+                    "weight": 0.25
+                },
+                {
+                    "criterion_name": "Factual Fidelity of Conceptual Nodes",
+                    "explanation": "Assesses the scientific and factual correctness of the discrete information populating the framework. The specific parameters, mechanisms, and sub-components listed within the nodes must accurately reflect the paper's core logic and established facts, remaining entirely free from hallucinated concepts, erroneous data points, or logical fallacies.",
+                    "human_preference_injection": "Superior factual fidelity requires the complete inclusion of all core theoretical pillars explicitly defined in the source text. Omitting a fundamental, defining mechanism misrepresents the established scientific facts of the proposed model and constitutes a critical factual deficit.",
+                    "weight": 0.2
+                },
+                {
+                    "criterion_name": "Informational Richness and Abstraction Balance",
+                    "explanation": "Measures the diagram's capacity to extract and synthesize high-value details without introducing informational noise. The framework must successfully capture core operational mechanisms and critical underlying variables, avoiding both an overly superficial macroscopic overview (information deficit) and an unrestrained accumulation of trivial details that obscures the core conceptual architecture.",
+                    "human_preference_injection": "Superior informational balance is achieved by integrating the foundational problem context and core novel mechanisms alongside the technical architecture, preventing an information deficit that reduces the framework to a generic, superficial template. It successfully synthesizes the driving motivations and critical underlying variables to capture the research's true operational depth without introducing visual noise.",
+                    "weight": 0.15
+                }
+            ]
+        },
+        "Structure": {
+            "Visual Organizational Layout": [
+                {
+                    "criterion_name": "Explicit Hierarchical and Modular Demarcation",
+                    "explanation": "Evaluates the diagram's ability to visually organize internal components into clear, block-based demarcations. It assesses the strategic use of bounding boxes, spatial grouping, and visual tiers to separate distinct concepts, stages, or classifications, ensuring that parent-child hierarchies and parallel modules are immediately comprehensible without visual conflation.",
+                    "human_preference_injection": "Superior demarcation is achieved by utilizing explicit visual tiers and spatial grouping to reflect the underlying taxonomy or logical classification of components. This ensures that overarching categories and their subordinate modules are immediately distinguishable, preventing the loss of structural hierarchy found in flat, parallel layouts.",
+                    "weight": 0.2
+                },
+                {
+                    "criterion_name": "Intuitive Topological Routing",
+                    "explanation": "Assesses the clarity and efficiency of the directional flows (e.g., arrows, connecting lines) that dictate the progressive or parallel reading path of the framework. It rewards clean routing that avoids unnecessary crossing of lines and utilizes appropriate detours for complex feedback loops, ensuring a seamless visual progression of the primary workflow.",
+                    "human_preference_injection": "Superior topological routing establishes a clear, sequential reading path that guides the viewer through the macro-level workflow while strictly minimizing chaotic line intersections. It prioritizes clean, non-overlapping directional flows over direct but tangled point-to-point connections that disrupt the visual progression.",
+                    "weight": 0.15
+                },
+                {
+                    "criterion_name": "Spatial Equilibrium and Structural Emphasis",
+                    "explanation": "Examines the overall distribution of the structural skeleton across the canvas. It evaluates whether the layout achieves a harmonious spatial balance (avoiding arbitrary congestion or unjustified empty spaces) and whether it structurally emphasizes core operational mechanisms over secondary workflows through appropriate spatial scaling and positioning.",
+                    "human_preference_injection": "Superior spatial equilibrium goes beyond mere symmetrical neatness by strategically allocating the largest spatial footprint to the paper's primary innovations. A highly rated diagram uses deliberate spatial scaling and prominent positioning to ensure core operational mechanisms visually dominate the canvas, preventing secondary context or standard workflows from receiving unjustified equal weight.",
+                    "weight": 0.15
+                }
+            ],
+            "Logical Accuracy": [
+                {
+                    "criterion_name": "Core Architecture Abstraction",
+                    "explanation": "Measures the diagram's capacity to effectively distill lengthy and complex textual narratives into a lucid, high-level structural skeleton. It evaluates whether the diagram successfully captures the 'holistic landscape' and essential operational mechanisms of the research without omitting pivotal macroscopic stages or suffering from detail overload that obfuscates the core logic.",
+                    "human_preference_injection": "Superior abstraction prioritizes the visualization of underlying operational mechanisms and dynamic state transitions over mere structural shapes or taxonomic labels. It effectively distills complex logic by representing how functional components interact to drive the research's core workflow.",
+                    "weight": 0.2
+                },
+                {
+                    "criterion_name": "Relational Precision and Fidelity",
+                    "explanation": "Evaluates the strict logical correctness of the mapped topological relationships against the source text. It assesses whether causal, nested, parallel, and progressive connections are accurately reconstructed, strictly penalizing structural hallucinations, erroneous conflations of independent concepts, or logical misalignments that conflict with the paper's factual assertions.",
+                    "human_preference_injection": "Superior relational fidelity requires the accurate mapping of all interdependent and parallel connections without omitting critical counterpart relationships. Selectively visualizing only one branch of a multi-faceted mechanism creates a structural misalignment that violates the strict logical correctness of the source text.",
+                    "weight": 0.3
+                }
+            ]
+        },
+        "Aesthetics": [
+            {
+                "criterion_name": "Functional Color Coding and Contrast",
+                "explanation": "Evaluates the deliberate and harmonious use of color palettes to visually distinguish distinct hierarchical layers, parallel modules, or thematic domains within the conceptual framework. Colors should be aesthetically pleasing, professionally muted (avoiding jarring or fluorescent tones), and provide sufficient contrast against text and background elements to ensure optimal readability and accessibility.",
+                "human_preference_injection": "Superior functional color coding employs professionally muted, harmonious palettes to distinguish thematic domains.",
+                "weight": 0.3
+            },
+            {
+                "criterion_name": "Visual Consistency and Stylistic Uniformity",
+                "explanation": "Assesses the cohesion of the diagram's visual language across all graphical components. This includes maintaining uniform stroke weights, consistent shape properties (e.g., standardized corner radii for bounding boxes), and a strictly unified rendering style (e.g., exclusively 2D flat design or a consistent isometric 3D style) to prevent a fragmented, patchwork appearance.",
+                "human_preference_injection": "Superior stylistic uniformity is demonstrated by maintaining a bespoke, cohesive design system across a highly diverse array of graphical elements. This robust visual integration is strongly preferred over the trivial consistency achieved by merely assembling generic, pre-packaged clip-art.",
+                "weight": 0.3
+            },
+            {
+                "criterion_name": "Typographic Hierarchy and Legibility",
+                "explanation": "Examines the aesthetic application of typography to reinforce the framework's conceptual architecture. Font properties—such as size, weight, capitalization, and color—must be systematically styled to visually differentiate overarching categories from subordinate details, ensuring crisp, high-resolution rendering that is easily legible without causing visual fatigue.",
+                "human_preference_injection": "Superior typographic hierarchy utilizes a sophisticated, multi-tiered system of font sizes, weights, and styles to systematically differentiate overarching categories from nested subordinate details. A rich, well-managed text hierarchy is strongly preferred over a flat, simplistic typographic approach that lacks the stylistic depth needed to articulate complex, multi-level information.",
+                "weight": 0.25
+            },
+            {
+                "criterion_name": "Minimalist Execution and Restraint in Decoration",
+                "explanation": "Measures the diagram's adherence to a clean, academic aesthetic by avoiding superfluous visual noise. The design should eschew non-functional decorative elements, such as exaggerated drop shadows, unnecessary gradients, or complex background textures, ensuring that the visual polish enhances rather than obscures the abstract logical relationships.",
+                "human_preference_injection": "Superior minimalist execution does not equate to extreme visual sparsity, but rather demands that every graphical element serves a deliberate, functional purpose. True academic restraint is achieved when a diagram accommodates complex visual components by ensuring they strictly enhance logical relationships, completely avoiding non-functional ornamentation or arbitrary stylistic flair.",
+                "weight": 0.15
+            }
+        ]
+    }
+}
+{
+    "id": 11,
+    "class": "Mechanism Diagram",
+    "number": 20,
+    "filepath": "",
+    "dimension_weight": {
+        "Structure": 0.45,
+        "Aesthetics": 0.15,
+        "Content": 0.4
+    },
+    "criteria": {
+        "Content": {
+            "Visual Element Representation": [
+                {
+                    "criterion_name": "Intuitive Entity and State Representation",
+                    "explanation": "Evaluates whether the graphical motifs used to represent microscopic or concrete entities (e.g., molecules, particles, data streams) intuitively convey their specific nature, physical properties, and functional states. The design of these elements should be highly distilled and free of extraneous ornamentation, allowing the viewer to easily distinguish between different active components and their varying states (e.g., activated vs. deactivated) during the mechanistic process.",
+                    "human_preference_injection": "Uniformly high scores should be assigned when both evaluated diagrams successfully utilize distinct, structurally intuitive icons to represent microscopic entities and their functional states without redundancy.",
+                    "weight": 0.15
+                },
+                {
+                    "criterion_name": "High-Fidelity Micro-Rendering and Morphological Integrity",
+                    "explanation": "Assesses the visual crispness and structural integrity of individual components. Because mechanism diagrams often rely on subtle morphological changes to depict function (e.g., binding sites, conformational shifts, precise physical linkages), elements must be rendered with sharp edges and accurate proportions. They must be entirely free from generative artifacts, blurring, or 'melting' effects that could be erroneously interpreted as scientific or functional alterations.",
+                    "human_preference_injection": "Both clean, minimalist designs with sharp edges and intricate layouts utilizing precise gradients or complex icons should receive equally high scores, provided they maintain strict structural precision and remain entirely free of generative artifacts. The evaluation must prioritize artifact-free clarity and morphological accuracy equally across differing, yet professionally executed, rendering styles.",
+                    "weight": 0.15
+                },
+                {
+                    "criterion_name": "Comprehensive and Unambiguous Legends",
+                    "explanation": "Measures the presence, clarity, and completeness of explanatory legends. Given that mechanism diagrams frequently employ abstract symbols, specific color encodings, and non-standard icons to represent complex forces, interactions, or specialized entities, adequate legends are strictly required to ensure the diagram is fully self-explanatory and decodable by the reader.",
+                    "human_preference_injection": "Superior decodability is achieved by integrating specific nomenclature for all functional entities and employing consistent, domain-standard symbolic motifs that allow for the precise differentiation of complex mechanistic pathways. A diagram is considered more comprehensive when its visual shorthand and labeling provide the granular detail necessary to identify specific actors and their distinct roles without requiring redundant textual explanations.",
+                    "weight": 0.1
+                }
+            ],
+            "Content Accuracy": [
+                {
+                    "criterion_name": "Accurate Depiction of Interactions and Transformations",
+                    "explanation": "Evaluates the factual correctness of the core mechanistic events depicted. It assesses whether the physical, chemical, or informational interactions between entities—and the explicit outcomes when these elements converge—are scientifically accurate and strictly faithful to the source paper. This includes the correct representation of binding, repelling, cleavage, data transformation, or energy transfer.",
+                    "human_preference_injection": "A diagram is superior when it explicitly depicts the conditional logic of state transformations, precisely showing how specific elements within a sequence are selectively targeted for functional operations while others are preserved as fixed context. This ensures the visual representation faithfully reflects the exact mechanistic constraints and operational boundaries defined by the scientific protocol.",
+                    "weight": 0.25
+                },
+                {
+                    "criterion_name": "Informational Depth and Mechanistic Granularity",
+                    "explanation": "Assesses whether the diagram extracts and presents a sufficient level of microscopic or concrete detail to truly explain 'how' the event occurs. A high-quality mechanism diagram must include crucial intermediate steps, transitional states, specific environmental conditions (e.g., pH, temperature, catalysts), and micro-mechanisms. It penalizes superficial representations that omit the pivotal details necessary to convey the comprehensive analytical depth of the research.",
+                    "human_preference_injection": "Superior mechanistic granularity is achieved by illustrating the dynamic, iterative evolution of a process across sequential states rather than providing a static structural snapshot. This approach provides deeper informational depth by visually demonstrating the \"how\" of the mechanism through explicit step-by-step transitions and operational transformations.",
+                    "weight": 0.2
+                },
+                {
+                    "criterion_name": "Terminological and Nomenclatural Consistency",
+                    "explanation": "Verifies that all text labels, scientific nomenclature, alphanumeric data, and variable abbreviations used within the visual elements are strictly consistent with the textual discourse of the paper. It penalizes the use of undefined abbreviations, discrepant variable names, or imprecise technical terminology that could introduce logical discontinuities or factual ambiguity.",
+                    "human_preference_injection": "Both diagrams should receive equally high scores if they strictly adhere to the manuscript's defined terminology, abbreviations, and variables without introducing ambiguities. As long as the scientific nomenclature remains consistent and precise, differing selections or placements of correct labels should not negatively impact the rating of either diagram.",
+                    "weight": 0.15
+                }
+            ]
+        },
+        "Aesthetics": [
+            {
+                "criterion_name": "Functional Color Harmony and State Differentiation",
+                "explanation": "Evaluates the selection and application of color palettes to aesthetically distinguish interacting entities and track state changes (e.g., pre- and post-reaction states). The colors must be visually harmonious, adhere to professional academic standards, and provide optimal contrast to highlight functional transformations without relying on chaotic, overly saturated, or fluorescent schemes.",
+                "human_preference_injection": "Superior diagrams utilize a sophisticated, muted color palette that adheres to professional academic standards, effectively managing high informational complexity while maintaining visual harmony. Preference is given to schemes that use distinct, purposeful tones to rigorously track functional state changes and differentiate systemic compartments over purely decorative or overly simplified illustrative palettes.",
+                "weight": 0.3
+            },
+            {
+                "criterion_name": "Stylistic Coherence of Heterogeneous Elements",
+                "explanation": "Assesses the uniformity of the visual language across diverse representational elements (e.g., mixing abstract data streams with concrete molecular structures). It rewards diagrams that seamlessly integrate these elements through consistent graphical properties—such as uniform stroke weights, matching corner radii, and a cohesive approach to dimensionality (strictly 2D or consistently rendered 3D)—preventing a fragmented, collage-like aesthetic.",
+                "human_preference_injection": "Stylistic consistency is achieved when diverse graphical elements—such as abstract symbols, text, and icons—share a unified design language through consistent stroke weights, rendering styles, and geometric properties. Charts that successfully meet this standard should be awarded equally high scores, regardless of variations in their specific elemental shapes.",
+                "weight": 0.3
+            },
+            {
+                "criterion_name": "Aesthetic Rendering of Dynamic Interactions",
+                "explanation": "Focuses on the visual polish and graphic execution of interaction cues, such as energy transfers, physical collisions, or chemical bindings. It evaluates whether effects like gradients, glows, or motion lines are rendered elegantly and purposefully. Diagrams are penalized for introducing superficial visual noise, such as exaggerated 3D lighting, heavy drop shadows, or overly complex textures that distract from the core mechanistic process.",
+                "human_preference_injection": "Superior rendering of dynamic interactions prioritizes explicit, directional cues that visually articulate the movement or transformation of components over static structural markers. Effectiveness is achieved through purposeful graphic metaphors, such as motion indicators or shifting boundaries, that clearly map mechanical progression without introducing distracting ornamental noise.",
+                "weight": 0.25
+            },
+            {
+                "criterion_name": "Typographic Integration and Contrast",
+                "explanation": "Evaluates the stylistic articulation of text within the diagram. Given the often complex and visually dense backgrounds of mechanism diagrams, this criterion assesses whether typographic choices (font family, weight, and color) are aesthetically pleasing and provide sufficient contrast for legibility. It includes the judicious use of subtle aesthetic treatments (like soft text outlines or semi-transparent backing panels) to ensure text remains readable without disrupting the overall visual harmony.",
+                "human_preference_injection": "Superior typography elegantly embeds text within complex backgrounds using subtle aesthetic treatments to maintain both legibility and visual harmony. This sophisticated integration is preferred over simply isolating text on stark white backgrounds, which artificially avoids the design challenge.",
+                "weight": 0.15
+            }
+        ],
+        "Structure": {
+            "Visual Organizational Layout": [
+                {
+                    "criterion_name": "Dynamic Flow and Directionality",
+                    "explanation": "Evaluates the clarity of the reading path in depicting the chronological or causal progression of the mechanism. The layout must possess intuitive starting and ending points, utilizing spatial arrangement (e.g., linear, cyclical, or branched) to seamlessly guide the viewer through the sequence of physical, chemical, or informational interactions without causing visual backtracking or confusion.",
+                    "human_preference_injection": "A superior layout establishes a cohesive, overarching reading path that seamlessly connects a unified starting origin to a definitive final outcome across complex branching and converging pathways. Fragmented or parallel layouts, despite appearing visually clean, are penalized for failing to depict a continuous, integrated systemic progression.",
+                    "weight": 0.15
+                },
+                {
+                    "criterion_name": "Contextual Partitioning and Boundary Delineation",
+                    "explanation": "Assesses the effective use of spatial grouping, spacing, and bounding frameworks to separate distinct physical environments, phases, or systemic compartments (e.g., across a cell membrane, different temperature zones, or distinct reaction stages). The layout should clearly isolate these contexts to reduce cognitive load while maintaining the overall cohesion of the mechanism.",
+                    "human_preference_injection": "Superior contextual partitioning is achieved by utilizing explicit, rigorous structural boundaries—such as definitive lines or distinct compartmental frameworks—to unambiguously isolate different systemic processes. Diagrams that rely solely on soft background color washes without hard structural delineations are penalized for failing to provide clear, cognitive separation of distinct functional environments.",
+                    "weight": 0.15
+                },
+                {
+                    "criterion_name": "Topological Clarity of Interactions",
+                    "explanation": "Focuses on the routing of connections, particularly where representative elements (e.g., molecules, data streams) converge, interact, or transform. The structural skeleton must meticulously avoid unnecessary crossing of lines and utilize clean, intentional routing for complex feedback loops or multi-element collisions, ensuring the visual neatness of the interaction nodes.",
+                    "human_preference_injection": "Superior topological clarity is achieved by skillfully routing complex, interconnected pathways and multi-element convergences with clean, intentional lines, rather than artificially avoiding crossings by isolating elements into disconnected modules. A highly rated diagram successfully organizes high-density interaction nodes into a unified, visually neat network without severing essential systemic connections.",
+                    "weight": 0.15
+                }
+            ],
+            "Logical Accuracy": [
+                {
+                    "criterion_name": "Fidelity of Causal and Temporal Sequences",
+                    "explanation": "Measures how accurately the diagram's topological structure reconstructs the deep-level causal and temporal associations described in the source text. The visual mapping must strictly adhere to the paper's logic, correctly ordering the sequence of events, conditional branches, and feedback mechanisms without altering the fundamental operational principles.",
+                    "human_preference_injection": "Superior fidelity is achieved by utilizing a continuous, linear timeline that preserves the unbroken chronological flow and maps directly to the sequential indexing of the source logic. This approach avoids the temporal fragmentation inherent in multi-row layouts, ensuring that overlapping stages or sliding transitions are perceived as a single, cohesive progression.",
+                    "weight": 0.2
+                },
+                {
+                    "criterion_name": "Granularity of Micro-Interactions",
+                    "explanation": "Evaluates the structural abstraction and depth of detail mining. A successful mechanism diagram must integrate critical high-value micro-details—such as specific intermediate transitional steps, catalysts, or localized physical/chemical changes—that are essential for explaining 'how' the event occurs. It penalizes overly rudimentary structures that omit pivotal mechanistic branches.",
+                    "human_preference_injection": "Superior granularity is achieved by utilizing specific technical notation, alphanumeric indices, and precise symbolic placeholders from the research rather than generic descriptive labels. This ensures the diagram captures the exact micro-level transitions and operational states necessary to explain the mechanism's technical execution.",
+                    "weight": 0.2
+                },
+                {
+                    "criterion_name": "Validity of Structural Relationships",
+                    "explanation": "Assesses the diagram for structural hallucinations or logical misalignments. The topological connections must not conflate independent processes or depict interactions, convergences, or outcomes that fundamentally conflict with the factual assertions or logical deductions of the scientific paper.",
+                    "human_preference_injection": "Superior diagrams precisely map quantitative parameters to visual boundaries—such as using explicit brackets to define window sizes and slide steps—to ensure the topological structure is mathematically verifiable. They must also clearly delineate the transformation of continuous processes into discrete, logically consistent sequences to prevent ambiguity in how complex causal relationships are decomposed.",
+                    "weight": 0.15
+                }
+            ]
+        }
+    }
+}

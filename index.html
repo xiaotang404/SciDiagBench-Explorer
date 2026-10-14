@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#18745c">
+  <meta name="description" content="SciDiagBench scientific diagram gallery: browse diagrams cleared for unchanged, noncommercial sharing by research domain and diagram type.">
+  <title>SciDiagBench · Diagram Gallery</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="lucide.min.js" defer></script>
+  <script src="data.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="page-width header-inner">
+      <a class="brand" href="index.html"><i data-lucide="network" aria-hidden="true"></i>Scientific Diagram Gallery</a>
+      <div class="header-meta">
+        <span class="collection-stats"><span><strong id="total-count">1902</strong> diagrams</span></span>
+      </div>
+    </div>
+  </header>
+  <main class="page-width">
+    <section class="filters" aria-label="Gallery filters">
+      <div class="filter-row"><span class="filter-label"><i data-lucide="globe" aria-hidden="true"></i><span>10 Domains</span></span><div id="domain-filters" class="filter-options" role="group" aria-label="Research domain"></div></div>
+      <div class="filter-row"><span class="filter-label"><i data-lucide="shapes" aria-hidden="true"></i><span>11 Types</span></span><div id="class-filters" class="filter-options" role="group" aria-label="Diagram type"></div></div>
+    </section>
+    <a class="leaderboard-intro" href="https://huggingface.co/spaces/tang-404/SciDiagBench-Leaderboard" target="_blank" rel="noopener noreferrer">
+      <span class="leaderboard-heading">SciDiagBench Leaderboard</span>
+      <span class="leaderboard-description">Benchmarking state-of-the-art open-source <strong>scientific diagram generation agents</strong> on our SciDiagBench dataset.</span>
+    </a>
+    <div class="gallery-toolbar">
+      <div class="result-heading"><h2 id="result-title">All diagrams</h2><span id="result-count" role="status" aria-live="polite"></span></div>
+      <div class="search-tools">
+        <label class="search-field"><i data-lucide="search" aria-hidden="true"></i><input id="search" type="search" placeholder="Search diagrams..." aria-label="Search papers, authors or diagram IDs"></label>
+      </div>
+    </div>
+    <div id="gallery" class="gallery"></div>
+    <div id="empty-state" class="empty-state" hidden><i data-lucide="search-x" aria-hidden="true"></i><h2>No matching diagrams</h2><button id="empty-reset" class="text-button">Reset filters</button></div>
+    <footer class="site-footer" aria-labelledby="sharing-policy-title">
+      <h2 id="sharing-policy-title">Sharing policy</h2>
+      <p>This gallery is shared for noncommercial academic use. When sharing diagrams, keep the images unchanged and retain the original authors, sources, copyright notices, and license information. Each diagram remains subject to its original license and any additional sharing conditions, available in the diagram details and the Attribution download.</p>
+    </footer>
+  </main>
+  <dialog id="viewer" aria-labelledby="viewer-title">
+    <div class="viewer-layout">
+      <div class="diagram-panel">
+        <div id="diagram-viewport" class="diagram-viewport"><img id="viewer-diagram" alt=""></div>
+        <a id="original-link" class="icon-button original-link" target="_blank" rel="noopener" title="Open original diagram" aria-label="Open original diagram"><i data-lucide="external-link"></i></a>
+      </div>
+      <div class="viewer-sidebar">
+        <div class="viewer-heading"><h2 id="viewer-title"></h2><button id="close" class="icon-button" title="Close" aria-label="Close"><i data-lucide="x"></i></button></div>
+        <aside id="viewer-details" class="viewer-details"></aside>
+      </div>
+    </div>
+  </dialog>
+  <noscript>JavaScript is required to browse the gallery.</noscript>
+</body>
+</html>
