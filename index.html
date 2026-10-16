@@ -14,7 +14,7 @@
 <body>
   <header class="site-header">
     <div class="page-width header-inner">
-      <a class="brand" href="index.html"><i data-lucide="network" aria-hidden="true"></i>Scientific Diagram Gallery</a>
+      <a class="brand" href="index.html"><i data-lucide="network" aria-hidden="true"></i>Scientific Diagram Explorer</a>
       <div class="header-meta">
         <span class="collection-stats"><span><strong id="total-count">1902</strong> diagrams</span></span>
       </div>
@@ -32,7 +32,7 @@
     <div class="gallery-toolbar">
       <div class="result-heading"><h2 id="result-title">All diagrams</h2><span id="result-count" role="status" aria-live="polite"></span></div>
       <div class="search-tools">
-        <label class="search-field"><i data-lucide="search" aria-hidden="true"></i><input id="search" type="search" placeholder="Search diagrams..." aria-label="Search papers, authors or diagram IDs"></label>
+        <label class="search-field"><i data-lucide="search" aria-hidden="true"></i><input id="search" type="search" placeholder="Search diagrams..." aria-label="Search papers, authors, publication venues or diagram IDs"></label>
       </div>
     </div>
     <div id="gallery" class="gallery"></div>
@@ -49,7 +49,7 @@
         <a id="original-link" class="icon-button original-link" target="_blank" rel="noopener" title="Open original diagram" aria-label="Open original diagram"><i data-lucide="external-link"></i></a>
       </div>
       <div class="viewer-sidebar">
-        <div class="viewer-heading"><h2 id="viewer-title"></h2><button id="close" class="icon-button" title="Close" aria-label="Close"><i data-lucide="x"></i></button></div>
+        <div class="viewer-heading"><div class="viewer-heading-content"><p id="viewer-publication" class="publication-venue" aria-label="Publication venue" hidden></p><h2 id="viewer-title"></h2></div><button id="close" class="icon-button" title="Close" aria-label="Close"><i data-lucide="x"></i></button></div>
         <aside id="viewer-details" class="viewer-details"></aside>
       </div>
     </div>

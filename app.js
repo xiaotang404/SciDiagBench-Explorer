@@ -36,7 +36,7 @@
   }
 
   function matches(record, ignoredKey) {
-    const searchText = `${record.id} ${record.title} ${record.authors} ${record.caption} ${record.condition} ${record.class} ${domainById.get(record.domain).name}`.toLocaleLowerCase();
+    const searchText = `${record.id} ${record.title} ${record.authors} ${record.venue || ""} ${record.caption} ${record.condition} ${record.class} ${domainById.get(record.domain).name}`.toLocaleLowerCase();
     return (ignoredKey === "domain" || state.domain === "all" || record.domain === state.domain)
       && (ignoredKey === "class" || state.class === "all" || record.class === state.class)
       && state.q.trim().toLocaleLowerCase().split(/\s+/).every((term) => searchText.includes(term));
@@ -75,7 +75,7 @@
     $("empty-state").hidden = filtered.length > 0;
     $("gallery").innerHTML = filtered.map((record, index) => `<article class="diagram-card" data-id="${record.id}" role="button" tabindex="0" aria-haspopup="dialog" aria-label="View ${escape(record.title)} · ${escape(record.figure)}">
       <div class="preview"><img src="${escape(record.diagram)}" alt="${escape(record.title)} · ${escape(record.figure)}" loading="${index < 6 ? "eager" : "lazy"}" decoding="async"></div>
-      <div class="card-body"><div class="card-type"><span title="${escape(record.class)}">${escape(record.class)}</span></div>
+      <div class="card-body"><div class="card-type"><span title="${escape(record.class)}">${escape(record.class)}</span>${record.venue ? `<span class="card-venue" aria-label="Publication venue: ${escape(record.venue)}">${escape(record.venue)}</span>` : ""}</div>
       <p class="card-domain">${escape(domainById.get(record.domain).name)}</p>
       <div class="card-title" title="${escape(record.title)}">${escape(record.title)}</div>
       <div class="card-footer"><span class="card-figure">${escape(record.figure)}</span>${permissionLabel(record, `license-tag${record.license.includes("NC") || !record.licenseUrl ? " nc" : ""}`, false)}</div></div></article>`).join("");
@@ -112,6 +112,8 @@
     $("viewer-diagram").alt = `${record.title} — ${record.figure}`;
     $("original-link").href = record.diagram;
     $("diagram-viewport").scrollTo(0, 0);
+    $("viewer-publication").textContent = record.venue || "";
+    $("viewer-publication").hidden = !record.venue;
     $("viewer-title").innerHTML = link(record.sourceUrl, `<span class="paper-title">${escape(record.title)}</span> <span class="source-hint">Open original<i data-lucide="arrow-up-right" aria-hidden="true"></i></span>`, "paper-link");
     $("viewer-details").innerHTML = `<p class="authors">${escape(record.authors)}</p>
       ${record.caption ? `<div class="diagram-caption"><p>${escape(record.caption)}</p></div>` : ""}
