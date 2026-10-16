@@ -145,7 +145,7 @@
     if (button.disabled) return;
     const status = $("attribution-status");
     if (location.protocol === "file:") {
-      status.textContent = "To download attribution with the image, open this gallery through a local server or its website URL.";
+      status.textContent = "To download attribution with the image, open Scientific Diagram Explorer through a local server or its website URL.";
       status.hidden = false;
       return;
     }

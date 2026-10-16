@@ -1,10 +1,10 @@
-# Scientific Diagram Gallery
+# Scientific Diagram Explorer
 
-The gallery currently contains 1902 diagrams, with 10 research domains, 11 diagram types, keyword search and detailed views.
+Scientific Diagram Explorer currently contains 1902 diagrams, with 10 research domains, 11 diagram types, keyword search and detailed views.
 
 ## Data format
 
-`data.js` stores the gallery data as `window.GALLERY_DATA = <JSON>;`, which the local HTML page loads directly.
+`data.js` stores the diagram collection as `window.GALLERY_DATA = <JSON>;`, which the local HTML page loads directly.
 
 The root object contains `name`, `domains`, `classes` and `diagrams`. `domains` stores each domain's `id` and `name`; `classes` stores the diagram type names. Each diagram record has the following required fields, in order: `id`, `diagram`, `class`, `domain`, `title`, `venue`, `authors`, `figure`, `caption`, `sourceUrl`, `license`, `licenseUrl` and `condition`.
 
@@ -21,7 +21,7 @@ Only `copyright` and `scores` are optional. Currently, 69 records have scores. C
 ## Files and maintenance
 
 - `index.html`, `styles.css`, `app.js`, `lucide.min.js`: the webpage and icons.
-- `data.js`: gallery data.
+- `data.js`: diagram collection data.
 - `venue_sources.json`: publication venue evidence and review status.
 - `diagram/`: 1902 original diagrams.
 - `diagram_map.jsonl`, `extract_scores.jsonl`: scoring weights and original scores, retained for reference. The site does not read these two files at runtime.
@@ -36,4 +36,4 @@ python -m http.server 8000
 
 To add a diagram, place its image in this directory's `diagram/` folder and add a record matching the format above to the `diagrams` array in `data.js`. Ensure the ID is unique, the type and domain are valid, and the image path is correct.
 
-Attribution downloads include the text caption, full sharing conditions and copyright notices, domain name and original image as `imageBase64`. Opening the HTML file directly allows browsing, but browsers restrict local file reads, so downloading displays a prompt to access the gallery through a local server or website.
+Attribution downloads include the text caption, full sharing conditions and copyright notices, domain name and original image as `imageBase64`. Opening the HTML file directly allows browsing, but browsers restrict local file reads, so downloading displays a prompt to access Scientific Diagram Explorer through a local server or website.
